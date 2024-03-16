@@ -1,11 +1,9 @@
 import gspread
 from google.oauth2.service_account import Credentials
-import game
-
-
 from player import Player
-
-
+import utilities
+import os
+from pprint import pprint
 
 
 SCOPE = [
@@ -65,17 +63,38 @@ def validate_string_input(str_input,type):
     
     return True
 
- 
+def update_questions_worksheet(question_level, questions_list):
+    questions=SHEET.worksheet(question_level)
+    data=questions.get_all_values()
+    if len(data)==1:
+        print(f'update{question_level} worksheet ...\n')
+        questions.append_rows(questions_list)
+        print(f'{question_level} worksheet was updated successfully\n')
+    else:
+        print(f'{question_level} worksheet has already populated with questions\n')
 
 def main():
     """
     the main function of the game
     """
     print_game_title()
-    player_details=get_player_data()
-    player_obj=Player(player_details)
-    players=SHEET.worksheet('player')
-    players.append_row(player_obj)
+    current_directory = os.getcwd()
+    easy_questions=current_directory+"/easy-questions.txt"
+    easy_questions=utilities.read_file(easy_questions)
+    update_questions_worksheet("easy_questions",easy_questions)
+    
+    medium_questions=current_directory+"/medium-questions.txt"
+    medium_questions=utilities.read_file(medium_questions)
+    update_questions_worksheet("medium_questions",medium_questions)
+
+    hard_questions=current_directory+"/hard-questions.txt"
+    hard_questions=utilities.read_file(hard_questions)
+    update_questions_worksheet("hard_questions",hard_questions)
+    
+    #player_details=get_player_data()
+    #player_obj=Player(player_details)
+    #players=SHEET.worksheet('player')
+    #players.append_row(player_obj)
 
     
 

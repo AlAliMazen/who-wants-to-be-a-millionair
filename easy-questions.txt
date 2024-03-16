@@ -3,98 +3,118 @@ Red
 Green
 Yellow
 Blue
+3
 How many fingers does a hand have?
 Three
 Five
 Ten
 Twelve
+2
 What is the capital of France?
 Berlin
 Rome
 Paris
 Madrid
+3
 What is the opposite of "old"?
 New
 Big
 Blue
 Small
+1
 What shape is a soccer ball?
 Square
 Circle
 Triangle
 Hexagon
+2
 Which animal meows?
 Dog
 Cat
 Bird
 Elephant
+2
 How many seasons are there?
 Two
 Three
 Four
 Five
+3
 Which instrument has keys and pedals?
 Trumpet
 Guitar
 Piano
 Drum kit
+3
 Which number comes before two?
 One
 Three
 Four
 Zero
+1
 What is the largest ocean?
 Mediterranean Sea
 Red Sea
 North Sea
 Pacific Ocean
+4
 What is the opposite of "hot"?
 Cold
 Warm
 Fire
 Glowing
+1
 Which month comes before December?
 November
 October
 January
 March
+1
 What is the smallest prime number?
 1
 2
 3
 4
+2
 What do plants eat to produce energy?
 Meat
 Sunlight
 Water
 Air
+2
 What is the tallest building in the world?
 Eiffel Tower
 Empire State Building
 Burj Khalifa
 Shanghai Tower
+3
 What color is snow?
 White
 Blue
 Green
 Red
+1
 What is the result of 2 + 2?
 3
 4
 5
 6
+2
 What is the fastest land animal?
 Elephant
 Cheetah
 Horse
 Turtle
+2
 What is the longest river in Germany?
 Rhine
 Danube
 Elbe
 Weser
+1
 What is the main ingredient in pizza?
 Meat
 Vegetables
 Cheese
 Dough
+4

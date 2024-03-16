@@ -3,98 +3,118 @@ Sydney
 Melbourne
 Canberra
 Brisbane
+3
 Which element has the chemical symbol "Na"?
 Sodium
 Nickel
 Neon
 Nitrogen
+1
 Who wrote the drama "Romeo and Juliet"?
 Charles Dickens
 William Shakespeare
 Jane Austen
 Mark Twain
+2
 How many continents are there on Earth?
 5
 6
 7
 8
+3
 In which year did the First World War begin?
 1912
 1914
 1916
 1918
+2
 What is the main component of air?
 Nitrogen
 Oxygen
 Carbon dioxide
 Argon
+2
 In which country is the Acropolis located?
 Italy
 Greece
 Egypt
 Turkey
+2
 Who painted the Mona Lisa?
 Vincent van Gogh
 Pablo Picasso
 Leonardo da Vinci
 Michelangelo
+3
 What is the main ingredient in Guacamole?
 Avocado
 Tomato
 Onion
 Garlic
+1
 Which is the longest river in the world?
 Nile
 Amazon
 Yangtze
 Mississippi
+2
 In which year did humans first land on the moon?
 1959
 1969
 1979
 1989
+2
 Who is the author of "The Little Prince"?
 J.K. Rowling
 Antoine de Saint-Exupéry
 Roald Dahl
 Lewis Carroll
+2
 Which planet is the third in our solar system?
 Mars
 Earth
 Venus
 Jupiter
+3
 What is the main currency in Japan?
 Yuan
 Won
 Yen
 Ringgit
+3
 Who was the first President of the United States?
 Thomas Jefferson
 George Washington
 Abraham Lincoln
 John Adams
+2
 What is the smallest mammal in the world?
 Elephant
 Mouse
 Bat
 Squirrel
+3
 What is the most spoken language in the world?
 English
 Mandarin
 Spanish
 Hindi
+2
 What is the main component of crude oil?
 Methane
 Ethanol
 Carbon
 Benzene
+3
 Who wrote the book "1984"?
 George Orwell
 Aldous Huxley
 Ray Bradbury
 Jules Verne
+1
 What is the largest mammal in the world?
 Blue whale
 Elephant
 Giraffe
 Rhino
+1
