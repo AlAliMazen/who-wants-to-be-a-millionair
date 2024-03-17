@@ -1,6 +1,8 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import random
+from pprint import pprint
+from question import Question
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -90,9 +92,59 @@ def update_questions_worksheet(question_level, questions_list):
         print(f'{question_level} worksheet has already populated with questions\n')
 
 
-def get_random_question_index(question_list):
+def get_random_question_index(questions_list):
     """
     get a random index which represents the question row starting at one to 
     exclude the headings till the last question
     """
-    return random.random(1,len(question_list))
+    selected_question_ist=[]
+    while len(selected_question_ist)<5:
+        index=random.randint(1,len(questions_list)-1)
+        if not index in selected_question_ist:
+            selected_question_ist.append(index)
+    
+    return selected_question_ist 
+
+
+
+def get_questions_ready():
+    """
+    prepare 15 randomly selected question and collect them in a list
+    """
+    easy_questions=SHEET.worksheet("easy_questions").get_all_values()
+    medium_questions=SHEET.worksheet("medium_questions").get_all_values()
+    hard_questions=SHEET.worksheet("hard_questions").get_all_values()
+    
+    #collect index in sets to avoid duplicates
+    easy_questions_indices=get_random_question_index(easy_questions)
+    medium_questions_indices=get_random_question_index(medium_questions)
+    hard_questions_indices=get_random_question_index(hard_questions)
+    
+    all_player_questions=[]
+    for i in range(15):
+        if i < 5:
+            for question in easy_questions_indices:
+                single_question=easy_questions[question]
+                all_player_questions.append(single_question)
+        elif i>=5 and i<10:
+            for question in medium_questions_indices:
+                single_question=medium_questions[question]
+                all_player_questions.append(single_question)
+        else:
+            for question in hard_questions_indices:
+                single_question=hard_questions[question]
+                all_player_questions.append(single_question)
+
+    return all_player_questions
+        
+def get_question(index):
+    all_questions=get_questions_ready()
+    question=all_questions[index]
+    question_obj=Question(question)
+    return question_obj
+    
+
+
+
+    
+    
