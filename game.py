@@ -31,5 +31,11 @@ def main():
     #players=SHEET.worksheet('player')
     #players.append_row(player_obj)
 
+    #starting the game
+    win = False
+    while not win:
+        #5 questions each level
+        question_index=utilities.get_random_question_index()
+        
     
 
