@@ -105,8 +105,6 @@ def get_random_question_index(questions_list):
     
     return selected_question_ist 
 
-
-
 def get_questions_ready():
     """
     prepare 15 randomly selected question and collect them in a list
@@ -119,21 +117,20 @@ def get_questions_ready():
     easy_questions_indices=get_random_question_index(easy_questions)
     medium_questions_indices=get_random_question_index(medium_questions)
     hard_questions_indices=get_random_question_index(hard_questions)
-    
+
     all_player_questions=[]
-    for i in range(15):
-        if i < 5:
-            for question in easy_questions_indices:
-                single_question=easy_questions[question]
-                all_player_questions.append(single_question)
-        elif i>=5 and i<10:
-            for question in medium_questions_indices:
-                single_question=medium_questions[question]
-                all_player_questions.append(single_question)
-        else:
-            for question in hard_questions_indices:
-                single_question=hard_questions[question]
-                all_player_questions.append(single_question)
+    
+    for question in easy_questions_indices:
+        single_question=easy_questions[question]
+        all_player_questions.append(single_question)
+
+    for question in medium_questions_indices:
+        single_question=medium_questions[question]
+        all_player_questions.append(single_question)
+
+    for question in hard_questions_indices:
+        single_question=hard_questions[question]
+        all_player_questions.append(single_question)
 
     return all_player_questions
         

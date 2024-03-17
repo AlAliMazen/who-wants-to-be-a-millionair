@@ -46,7 +46,6 @@ def main():
         print(f'4){question.get_question_option(4)}')
 
         usr_selection=input("Your option\n")
-        print(f'usr choice{usr_selection}')
         usr_choices.append(usr_selection)
 
     pprint(usr_choices)
