@@ -3,6 +3,7 @@ from google.oauth2.service_account import Credentials
 import random
 from pprint import pprint
 from question import Question
+import re
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -80,6 +81,19 @@ def validate_string_input(str_input,type):
         return False
     
     return True
+def validate_integer_input(usr_choice):
+    print(usr_choice)
+    pattern=r'^[1-4]$'
+    try:
+        if not bool(re.match(pattern,usr_choice)):
+            print("it is here")
+            raise ValueError(f'{usr_choice} is not a valid choice \n')
+    except ValueError as e:
+        print(f"Invalid Choice: {e}")
+        return False
+    
+    return True
+
 
 def update_questions_worksheet(question_level, questions_list):
     questions=SHEET.worksheet(question_level)
@@ -145,8 +159,8 @@ def print_question_with_choices(question,index):
     option_padding=padding*2
     print(f' '.ljust(padding)+str(index+1)+" "+question.get_question_txt().ljust(padding)+'')
     print(f''.ljust(1)+"".center(len(str(index+1)+question.get_question_txt())+option_padding,"-")+'')
-    print(f''.ljust(option_padding)+'2 ) '+question.get_question_option(2).ljust(option_padding))
-    print(f''.ljust(option_padding)+'1 ) '+question.get_question_option(1).ljust(option_padding))
+    print(f''.ljust(option_padding)+'1 ) '+question.get_question_option(2).ljust(option_padding))
+    print(f''.ljust(option_padding)+'2 ) '+question.get_question_option(1).ljust(option_padding))
     print(f''.ljust(option_padding)+'3 ) '+question.get_question_option(3).ljust(option_padding))
     print(f''.ljust(option_padding)+'4 ) '+question.get_question_option(4).ljust(option_padding)+'\n')
 

@@ -37,6 +37,12 @@ def main():
     for index in range(1):
         question=utilities.get_question(index)
         utilities.print_question_with_choices(question,index)
+        while True:
+            usr_selection=input("Enter your choice from 1 to 4 \n")
+            if utilities.validate_integer_input(usr_selection):
+                break
+
+            
 
 
 
