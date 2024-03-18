@@ -34,21 +34,11 @@ def main():
     #starting the game
     win = False
     usr_choices=[]
-    for index in range(15):
+    for index in range(1):
         question=utilities.get_question(index)
-        print(type(question))
-        print("|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|\n")
-        print(f"{index+1}|{question.get_question_txt()}          |\n")
-        print("|_____________________________________________|\n")
-        print(f'1){question.get_question_option(1)}')
-        print(f'2){question.get_question_option(2)}')
-        print(f'3){question.get_question_option(3)}')
-        print(f'4){question.get_question_option(4)}')
+        utilities.print_question_with_choices(question,index)
 
-        usr_selection=input("Your option\n")
-        usr_choices.append(usr_selection)
 
-    pprint(usr_choices)
 
     
 

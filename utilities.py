@@ -140,6 +140,15 @@ def get_question(index):
     question_obj=Question(question)
     return question_obj
     
+def print_question_with_choices(question,index):
+    padding=15
+    option_padding=padding*2
+    print(f' '.ljust(padding)+str(index+1)+" "+question.get_question_txt().ljust(padding)+'')
+    print(f''.ljust(1)+"".center(len(str(index+1)+question.get_question_txt())+option_padding,"-")+'')
+    print(f''.ljust(option_padding)+'2 ) '+question.get_question_option(2).ljust(option_padding))
+    print(f''.ljust(option_padding)+'1 ) '+question.get_question_option(1).ljust(option_padding))
+    print(f''.ljust(option_padding)+'3 ) '+question.get_question_option(3).ljust(option_padding))
+    print(f''.ljust(option_padding)+'4 ) '+question.get_question_option(4).ljust(option_padding)+'\n')
 
 
 
