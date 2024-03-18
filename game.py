@@ -34,15 +34,25 @@ def main():
     #starting the game
     win = False
     usr_choices=[]
-    for index in range(1):
+    for index in range(5):
         question=utilities.get_question(index)
         utilities.print_question_with_choices(question,index)
         while True:
             usr_selection=input("Enter your choice from 1 to 4 \n")
             if utilities.validate_integer_input(usr_selection):
+                print("it is valid input")
                 break
+            else:
+                print("it is not valid input\n")
+        
+        if question.check_usr_answer(usr_selection):
+            print("Correct \n")
+        else:
+            print("Your choice is wrong\n")
+            break
 
             
+
 
 
 

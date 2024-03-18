@@ -44,9 +44,10 @@ def print_game_title():
     """
     when starting, restarting or cleaning the console, the title will be printed 
     """
-    print("|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|\n")
-    print("|      WHO WANTS TO BE A MILLIONAIRE          |\n")
-    print("|_____________________________________________|\n\n")
+    padding=15
+    print(" ".rjust(padding)+"|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|".ljust(padding))
+    print(" ".rjust(padding)+"|      WHO WANTS TO BE A MILLIONAIRE          |".ljust(padding))
+    print(" ".rjust(padding)+"|_____________________________________________|".ljust(padding)+"\n\n")
 
 def get_player_data():
     """
@@ -82,7 +83,6 @@ def validate_string_input(str_input,type):
     
     return True
 def validate_integer_input(usr_choice):
-    print(usr_choice)
     pattern=r'^[1-4]$'
     try:
         if not bool(re.match(pattern,usr_choice)):
@@ -155,12 +155,12 @@ def get_question(index):
     return question_obj
     
 def print_question_with_choices(question,index):
-    padding=15
+    padding=10
     option_padding=padding*2
     print(f' '.ljust(padding)+str(index+1)+" "+question.get_question_txt().ljust(padding)+'')
     print(f''.ljust(1)+"".center(len(str(index+1)+question.get_question_txt())+option_padding,"-")+'')
-    print(f''.ljust(option_padding)+'1 ) '+question.get_question_option(2).ljust(option_padding))
-    print(f''.ljust(option_padding)+'2 ) '+question.get_question_option(1).ljust(option_padding))
+    print(f''.ljust(option_padding)+'1 ) '+question.get_question_option(1).ljust(option_padding))
+    print(f''.ljust(option_padding)+'2 ) '+question.get_question_option(2).ljust(option_padding))
     print(f''.ljust(option_padding)+'3 ) '+question.get_question_option(3).ljust(option_padding))
     print(f''.ljust(option_padding)+'4 ) '+question.get_question_option(4).ljust(option_padding)+'\n')
 
