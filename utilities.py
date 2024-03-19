@@ -49,6 +49,30 @@ def print_game_title():
     print(" ".rjust(padding)+"|      WHO WANTS TO BE A MILLIONAIRE          |".ljust(padding))
     print(" ".rjust(padding)+"|_____________________________________________|".ljust(padding)+"\n\n")
 
+def print_game_menu():
+    """
+    Greeting the user and show the Game menu
+    """
+    print_game_title()
+    padding=15
+    print(" ".rjust(padding)+"1 ) How to play this game (show instructions)?")
+    print(" ".rjust(padding)+"2 ) Start the game")
+    print(" ".rjust(padding)+"3 ) Quite\n\n")
+
+
+def show_game_instructions():
+    """
+    print the instruction 
+    """
+    padding=15
+    print(" ".rjust(padding)+"This game start by asking you to type your fullname and country. These information will be saved")
+    print(" ".rjust(padding)+"in a database and used for scoring comparisons.\n\n")
+    print(" ".rjust(padding)+"After typing your fullname and country, the game starts to show 15 questions after each other and every")
+    print(" ".rjust(padding)+"question has four choices 1 to 4 . You can type your choice as digits not letters.\n")
+    print(" ".rjust(padding)+"If your choice is correct, then you get 100 $ (virtually). Otherwise, you will lose the round and ")
+    print(" ".rjust(padding)+"will be asked whether you want to play again or just finish the game by typing y for Yes or n for No.\n")
+    print(" ".rjust(padding)+"Best wishes\n\n")
+
 def get_player_data():
     """
     get player fullname, country, email and birth year
@@ -82,6 +106,8 @@ def validate_string_input(str_input,type):
         return False
     
     return True
+
+
 def validate_integer_input(usr_choice):
     pattern=r'^[1-4]$'
     try:
