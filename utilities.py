@@ -55,8 +55,8 @@ def print_game_menu():
     """
     print_game_title()
     padding=15
-    print(" ".rjust(padding)+"1 ) How to play this game (show instructions)?")
-    print(" ".rjust(padding)+"2 ) Start the game")
+    print(" ".rjust(padding)+"1 ) Start the game")
+    print(" ".rjust(padding)+"2 ) How to play this game (show instructions)?")
     print(" ".rjust(padding)+"3 ) Quite\n\n")
 
 
@@ -72,6 +72,23 @@ def show_game_instructions():
     print(" ".rjust(padding)+"If your choice is correct, then you get 100 $ (virtually). Otherwise, you will lose the round and ")
     print(" ".rjust(padding)+"will be asked whether you want to play again or just finish the game by typing y for Yes or n for No.\n")
     print(" ".rjust(padding)+"Best wishes\n\n")
+
+def get_user_choice():
+    """
+    used to get the user choice when instructions are show and user wants either to finish or start the game
+    """
+    while True:
+        choice=input("For Menu press Y  To finish the Game E\nYour input: \n")
+        if choice.lower()=="e":
+            print("choice is e or E")
+            return "e"
+        elif choice.lower()=="y":
+            print("choice is y or Y")
+            print("Showing the Game main\n")
+            return "y"
+        else:
+            print("Invalid choice either Y or E n")
+
 
 def get_player_data():
     """
@@ -96,11 +113,12 @@ def validate_string_input(str_input,type):
     using RegEx regular expression to evaluate the name of the user
     """
     pattern = r'^[a-zA-Z ]+$'
+    print("in validating string method "+str_input)
     try:
         if len(str_input)==0 :
             raise ValueError(f"{type} can't be empty")
         elif not re.match(pattern, str_input):
-            raise ValueError(f"{type}  can only have letters both in lower and uppercase and spaces NO numeric values!")        
+            raise ValueError(f"{type}  can only have letters both in lower and uppercase and spaces NO numeric values!")
     except ValueError as e:
         print(f"Invalid input: {e}, please try again\n")
         return False

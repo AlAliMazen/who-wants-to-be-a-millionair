@@ -27,20 +27,14 @@ def main():
     utilities.update_questions_worksheet("hard_questions",hard_questions) """
     exit = False
     while not exit:
-
         utilities.print_game_menu()
         game_choice=input("Your choice: \n")
         if utilities.validate_integer_input(game_choice):
             if int(game_choice)==1:
-                utilities.show_game_instructions()
-                choice=input("Start game Y  Finish Game E")
-                if choice.lower()=="e":
-                    exit=True
-        
-                #player_details=get_player_data()
-                #player_obj=Player(player_details)
-                #players=SHEET.worksheet('player')
-                #players.append_row(player_obj)
+                player_details=utilities.get_player_data()
+                player_obj=Player(player_details)
+                players=utilities.SHEET.worksheet('player')
+                players.append_row(player_obj)
                 
                 #starting the game
                 win = False
@@ -61,11 +55,13 @@ def main():
                     else:
                         print("Your choice is wrong\n")
                         break
+            elif int(game_choice)==2:
+                utilities.show_game_instructions()
+                if utilities.get_user_choice()=="e":
+                    print("Finish Game")
+                    exit=True
+               
 
-            
-
-
-
-
-    
+            elif int(game_choice)==3:
+                exit = True
 
