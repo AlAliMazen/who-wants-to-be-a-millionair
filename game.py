@@ -40,11 +40,11 @@ def main():
                 utilities.clear_console()
                 
                 #starting the game
-                
+                question=utilities.get_question(index)
                 for index in range(15):
                     utilities.print_player_info(player_obj.get_player_with_score(),index+1)
                     utilities.print_game_title()
-                    question=utilities.get_question(index)
+                    
                     utilities.print_question_with_choices(question,index)
                     
                     while True:
