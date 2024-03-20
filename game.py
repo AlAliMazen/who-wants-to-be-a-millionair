@@ -26,6 +26,8 @@ def main():
     hard_questions=utilities.read_file(hard_questions)
     utilities.update_questions_worksheet("hard_questions",hard_questions) """
     exit = False
+    win = False
+    usr_choices=[]
     while not exit:
         utilities.print_game_menu()
         game_choice=input("Your choice: \n")
@@ -38,9 +40,8 @@ def main():
                 utilities.clear_console()
                 
                 #starting the game
-                win = False
-                usr_choices=[]
-                for index in range(5):
+                
+                for index in range(15):
                     utilities.print_player_info(player_obj.get_player_with_score(),index+1)
                     utilities.print_game_title()
                     question=utilities.get_question(index)
@@ -57,10 +58,17 @@ def main():
                     if question.check_usr_answer(usr_selection):
                         print("Correct \n")
                         player_obj.increase_player_score()
-                        time.sleep(5) # to let console pause
+                        time.sleep(2) # to let console pause
                         utilities.clear_console()
+                        if index+1==15:
+                            utilities.print_winner_info(player_obj.get_player_with_score(),index+1)
+                            exit =True
+                            break
                     else:
                         print("Your choice is wrong\n")
+                        #update score and finish the game
+                        utilities.clear_console()
+                        utilities.print_player_info(player_obj.get_player_with_score(), index)
                         exit = True
                         break
             elif int(game_choice)==2:

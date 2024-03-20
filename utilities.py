@@ -6,6 +6,7 @@ from question import Question
 import re
 import os   # to detect the operating system
 import platform # to detect the platform Windows, Linux , macOS or ...
+import datetime
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -185,7 +186,10 @@ def get_questions_ready():
     easy_questions_indices=get_random_question_index(easy_questions)
     medium_questions_indices=get_random_question_index(medium_questions)
     hard_questions_indices=get_random_question_index(hard_questions)
-
+    print(easy_questions_indices)
+    print(medium_questions_indices)
+    print(hard_questions_indices)
+    
     all_player_questions=[]
     
     for question in easy_questions_indices:
@@ -224,8 +228,16 @@ def print_player_info(player, q_index):
         level="Hard"
     elif q_index>5:
         level="Medium"
-
     print(f'Player name:{player[0]}   Country: {player[1]}   Score {player[2]}   Level: {level}')
 
+
+def print_winner_info(player, index):
+    """
+    print the winner information to the console
+    update the database
+    """
+    now= datetime.datetime.now().strftime("%d.%m.%Y %X")
+    print(" ".rjust(25)+"Congratulations ! You are a millionaire now")
+    print(' '.rjust(15)+player[0]+' Country: '+player[1]+' Score: '+player[2]+" Date: "+now)
     
     

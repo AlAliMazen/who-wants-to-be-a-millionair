@@ -19,7 +19,7 @@ class Player:
         player.append(self.fullname)
         player.append(self.country)
         player.append(self.score)
-        return player;
+        return player
 
     def increase_player_score(self):
         self.score+=100
