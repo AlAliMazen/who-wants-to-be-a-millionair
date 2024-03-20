@@ -6,6 +6,7 @@ class Player:
     def __init__(self, player_data):
         self.fullname=player_data[0]
         self.country=player_data[1]
+        self.score=0
     
     def get_player_details(self):
         player=[]
@@ -13,4 +14,11 @@ class Player:
         player.append(self.country)
         return player
     
-    
+    def get_player_with_score(self):
+        player=[]
+        player.append(self.fullname)
+        player.append(self.country)
+        player.append(self.score)
+
+    def increase_player_score(self):
+        self.score+=100
