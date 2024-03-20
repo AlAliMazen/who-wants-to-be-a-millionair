@@ -31,15 +31,17 @@ def main():
         game_choice=input("Your choice: \n")
         if utilities.validate_integer_input(game_choice):
             if int(game_choice)==1:
-                #player_details=utilities.get_player_data()
-                #player_obj=Player(player_details)
-                #players=utilities.SHEET.worksheet('player')
-                #players.append_row(player_obj.get_player_details())
+                player_details=utilities.get_player_data()
+                player_obj=Player(player_details)
+                players=utilities.SHEET.worksheet('player')
+                players.append_row(player_obj.get_player_details())
                 utilities.clear_console()
+                
                 #starting the game
                 win = False
                 usr_choices=[]
                 for index in range(5):
+                    utilities.print_player_info(player_obj.get_player_with_score(),index+1)
                     utilities.print_game_title()
                     question=utilities.get_question(index)
                     utilities.print_question_with_choices(question,index)
@@ -54,6 +56,7 @@ def main():
                     
                     if question.check_usr_answer(usr_selection):
                         print("Correct \n")
+                        player_obj.increase_player_score()
                         time.sleep(5) # to let console pause
                         utilities.clear_console()
                     else:

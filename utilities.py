@@ -218,7 +218,14 @@ def print_question_with_choices(question,index):
     print(f''.ljust(option_padding)+'3 ) '+question.get_question_option(3).ljust(option_padding))
     print(f''.ljust(option_padding)+'4 ) '+question.get_question_option(4).ljust(option_padding)+'\n')
 
+def print_player_info(player, q_index):
+    level="Easy"
+    if q_index >10:
+        level="Hard"
+    elif q_index>5:
+        level="Medium"
 
+    print(f'Player name:{player[0]}   Country: {player[1]}   Score {player[2]}   Level: {level}')
 
     
     
