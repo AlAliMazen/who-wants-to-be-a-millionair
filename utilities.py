@@ -4,6 +4,8 @@ import random
 from pprint import pprint
 from question import Question
 import re
+import os   # to detect the operating system
+import platform # to detect the platform Windows, Linux , macOS or ...
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -83,12 +85,20 @@ def get_user_choice():
             print("choice is e or E")
             return "e"
         elif choice.lower()=="y":
-            print("choice is y or Y")
             print("Showing the Game main\n")
+            clear_console()
             return "y"
         else:
             print("Invalid choice either Y or E n")
 
+def clear_console():
+    system = platform.system()
+    if system == "Windows":
+        return os.system('cls')
+    elif system == "Linux":
+        return os.system('clear')
+    elif system == "Darwin":
+        return os.system('clear')
 
 def get_player_data():
     """

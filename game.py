@@ -1,7 +1,6 @@
 
 from player import Player
 import utilities
-import os
 from pprint import pprint
 
 
