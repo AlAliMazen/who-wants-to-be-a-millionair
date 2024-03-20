@@ -186,9 +186,6 @@ def get_questions_ready():
     easy_questions_indices=get_random_question_index(easy_questions)
     medium_questions_indices=get_random_question_index(medium_questions)
     hard_questions_indices=get_random_question_index(hard_questions)
-    print(easy_questions_indices)
-    print(medium_questions_indices)
-    print(hard_questions_indices)
     
     all_player_questions=[]
     
@@ -207,9 +204,7 @@ def get_questions_ready():
     return all_player_questions
         
 def get_question(index):
-    all_questions=get_questions_ready()
-    question=all_questions[index]
-    question_obj=Question(question)
+    question_obj=Question(index)
     return question_obj
     
 def print_question_with_choices(question,index):
