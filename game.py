@@ -2,6 +2,7 @@
 from player import Player
 import utilities
 from pprint import pprint
+import time
 
 
 
@@ -30,17 +31,19 @@ def main():
         game_choice=input("Your choice: \n")
         if utilities.validate_integer_input(game_choice):
             if int(game_choice)==1:
-                player_details=utilities.get_player_data()
-                player_obj=Player(player_details)
-                players=utilities.SHEET.worksheet('player')
-                players.append_row(player_obj)
-                
+                #player_details=utilities.get_player_data()
+                #player_obj=Player(player_details)
+                #players=utilities.SHEET.worksheet('player')
+                #players.append_row(player_obj.get_player_details())
+                utilities.clear_console()
                 #starting the game
                 win = False
                 usr_choices=[]
                 for index in range(5):
+                    utilities.print_game_title()
                     question=utilities.get_question(index)
                     utilities.print_question_with_choices(question,index)
+                    
                     while True:
                         usr_selection=input("Enter your choice from 1 to 4 \n")
                         if utilities.validate_integer_input(usr_selection):
@@ -51,8 +54,11 @@ def main():
                     
                     if question.check_usr_answer(usr_selection):
                         print("Correct \n")
+                        time.sleep(5) # to let console pause
+                        utilities.clear_console()
                     else:
                         print("Your choice is wrong\n")
+                        exit = True
                         break
             elif int(game_choice)==2:
                 utilities.show_game_instructions()
