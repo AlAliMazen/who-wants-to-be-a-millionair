@@ -14,61 +14,32 @@ If a player chooses to start the game, s/he needs to type his full name and his 
 
 In Software industry, it is extremely important to have a complete understanding of when the process starts and when it ends as well as what happens in between. Following flowchart shows how the play begins and when it ends.
 
-![Flowchart](assets/README/who_wants_to_be_a_millionaire.drawio.png)
+![Flowchart](assets/README/who_wants_to_be_a_millionaire.png)
 
 Following is a video about the end product:
 
 
 
-**To create a gif**:
-1. take a video of your program using slack in a message to yourself
-2. download the video
-3. upload it to https://convertio.co/mp4-gif/
-4. download the gif
-5. copy the file and paste it into your readme like you do with screenshots
-
 ## Live Site
 🚨**Required** 
 
-- Include a link to deployed project (typically a herokuapp url )
+- [Who Wants to Be a Millionaire?](https://whowantstobeamillionaire24-bb20122b77fb.herokuapp.com/)
 
 ## Repository
 🚨**Required** 
 
-- Include a Link to the GitHub repository
+- A complete repository for the game is under [Who Wants to Be a Millionaire?](https://github.com/AlAliMazen/who-wants-to-be-a-millionair)
+
 ## Author
 🚨**Required** 
 
-DEVELOPER_NAME (take credit for the work you do!)
+Mazen Al Ali
 
 ## Table of Contents
 🚀 **merit & beyond**
 
 ### Screenshots and Videos
-**Here’s a great video on how to add videos to your readme! no need to convert to gifs!!**
 
-https://www.youtube.com/watch?v=G3Cytlicv8Y
-
-> 1. record a video via slack
-> 2. download it
-> 3. in github, edit your readme via the pencil icon
-> 4. type a place holder word and highlight it
-> 5. drag and drop mp4 file over that text
-> 6. scroll down to the commit area
-> 7. update the default commit message
-> 8. click the green button
-> 9. ```git pull``` changes to your gitpod workspace
-
-**You can do the steps 3-9 for the image/screenshot uploads too!**
-
-### Cheatsheets and Auto Generation Tools
-
-Markdown's not all that easy so sometimes you may want to use some tools to make tables. 
-
-- [Markdown Cheatsheet](https://guides.github.com/features/mastering-markdown/)
-- [markdown table generator](https://www.tablesgenerator.com/markdown_tables) - used to help with documentation table formatting
-- [mardown table of contents generator](https://luciopaiva.com/markdown-toc/) - used to create table of contents (be weary it does have some bugs if you have dashes or trailing spaces in your headers)
-- [readme.so](https://readme.so/) - if you don't want to learn markdown, this tool might help you
 
 # Table of Contents
 🚀 **merit & beyond**
