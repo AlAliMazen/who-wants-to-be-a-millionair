@@ -95,7 +95,7 @@ How to play when game starts?
     6- In case the option isn't right, the game will be terminated indicating the player loses the round and his current score. 
     7- If player chooses the second option, the rules and How-to instructions are going to be shown. Player can also either end the game by pressing e or going back to the menu by pressing y
     8- When the third option is clicked the scoring board will be loaded from the google sheet and it is sorted based on the score 
-    9- If player chooses to quit the game 
+    9- If player chooses to quit the game, s/he should only choose number 4 and game will be terminated.
 
 ## Features
 🚨**Required** 

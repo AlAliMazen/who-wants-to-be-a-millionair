@@ -30,4 +30,13 @@ class Player:
             self.score=125000
         else:
             self.score+=self.score
+    
+    def update_safety_score(self):
+        if self.score >=32000:
+            self.score=32000
+        elif self.score>=1000:
+            self.score=1000
+        else:
+            self.score
         
+        return self.score
