@@ -58,8 +58,8 @@ def main():
                     
                     if question.check_usr_answer(usr_selection):
                         print("Correct \n")
-                        player_obj.increase_player_score()
-                        time.sleep(2) # to let console pause
+                        player_obj.increase_player_score(index+1)
+                        time.sleep(3) # to let console pause
                         utilities.clear_console()
                         if index+1==15:
                             utilities.print_winner_info(player_obj.get_player_with_score(),index+1)
@@ -68,6 +68,7 @@ def main():
                     else:
                         print("Your choice is wrong\n")
                         #update score and finish the game
+                        time.sleep(3) # to let console pause
                         utilities.clear_console()
                         utilities.print_player_info(player_obj.get_player_with_score(), index)
                         exit = True

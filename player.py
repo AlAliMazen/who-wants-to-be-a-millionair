@@ -21,5 +21,13 @@ class Player:
         player.append(self.score)
         return player
 
-    def increase_player_score(self):
-        self.score+=100
+    def increase_player_score(self,index):
+        if index==1:
+            self.score=100
+        elif index == 5:
+            self.score=1000
+        elif index == 12:
+            self.score=125000
+        else:
+            self.score+=self.score
+        
