@@ -46,9 +46,6 @@ Mazen Al Ali
 # Table of Contents
 🚀 **merit & beyond**
 
-Copy your readme to https://luciopaiva.com/markdown-toc/ to make a table of contents.  This will help assessors to see the structure of your readme. Just test it out ast this tool isn't perfect. It tends to mess up with special characters like dashes.
-
-
 - [PROJECT NAME](#project-name)
   - [Live Site](#live-site)
   - [Repository](#repository)
@@ -83,47 +80,51 @@ Copy your readme to https://luciopaiva.com/markdown-toc/ to make a table of cont
 ====================================== The Sections you Fill in are below ==============================
 
 
-Generate after readme is complete by copying and pasting your readme from this point & below into this tool:
-- [mardown table of contents generator](https://ecotrust-canada.github.io/markdown-toc/)
-**NOTE:** It does have some bugs if you have dashes or trailing spaces in your headers
-
 ## How To Play/Use
 🚨**Required** 
 
-Paragraph or bullet points of how the user initiates the program and interfaces with it. You could have videos of each bit if you want and direct what the user should do.
+When the Game starts it does execute the following steps before the player is able to type an choice. First of all it reads the questions text files and split them into lists preparing them for inserting in the Google drive sheets. Only if the google sheets allocated for the questions are empty, the population process will be executed. Each question sheet has 20 question. There are 3 types of questions (Easy, Medium and Hard)
 
-you can have a gif here too if you want.
+How to play when game starts?
+
+    1- Choose one of the options 1,2,3 or 4 
+    2- To start the game choose 1 . This option will be forwarded to ask the player to type his name and his country and press enter key after each input.
+    3- Console will be cleared and a line at the top of the console will be shown with player name, country, score and question level
+    4- A question will be shown with 4 options 1 to 4 . Player can type his option by pressing keys of 1 to 4 .
+    5- In case the option is the same as the right answer, the score will be incremented, console will be cleared and a new question will be shown.
+    6- In case the option isn't right, the game will be terminated indicating the player loses the round and his current score. 
+    7- If player chooses the second option, the rules and How-to instructions are going to be shown. Player can also either end the game by pressing e or going back to the menu by pressing y
+    8- When the third option is clicked the scoring board will be loaded from the google sheet and it is sorted based on the score 
+    9- If player chooses to quit the game 
 
 ## Features
 🚨**Required** 
-
-Use this section to itemize the features of your project. 
-
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
-
-It's easiest to break this section down into piece parts or core functionality blocks such as data upload, user input, analysis and data output; focusing on the atomic functions and data model(s) or classes you created to make the program work. 
 
 
 ### Implemented Features
 🚨**Required** 
 
-In each subsection, write out what the feature is for and what value it adds. If there is terminal interaction or output associated with the function, include a screenshot/gif.
+From a developer point of view this version of the game implements the concept of the OOP and makes use of the class concept. Player as well as Question both have their separated files and initialized in another procedural python file.
+
+Another Feature is the validation process of user input, either whe Player still at the main menu of the game or when the question is displayed. The validation process makes use of the Regular Expressions.
+
+Safety Score Calculation: when player loses the round a call to the player object and let it check the last score the player has got. If it is more than 1000 then 1000 will be his last score instead of 0. In the same manner when player loses the round and his is at questions more than 10, player will get back to 32000 instead of 0 or 1000 .
+
+Last but not least, the game makes use of the live score tracking. In other words, whenever the player gets the right answer for the shown question, h/his score is going to be incremented (make use of the player object implemented methods) and shown right at the top of the game. 
 
 
 ### Future Features
 🚀 **merit & beyond**
 
-Use this section to discuss plans for additional features to be implemented in the future:
-
-If you end up not developing some features you hoped to implement, you can include those in this section.
+The possibility for the player to remove two wrong options will be a good future feature to implement later on. This feature will be available be the medium and hard questions and only to be used once in the whole round.
 
 
 ## Flow Chart
 🚀 **merit & beyond**
 
-This section is where you would share logic diagrams and spreadsheets that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in a separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser. 
+The following flow chart shows how the game starts and what happen by choosing options 
 
-The flowchart can be as simple as a picture of a drawing of how you envisioned laying out the logic for you project, or done with a professional tool such as powerpoint, googlesheets, or [https://app.diagrams.net/](https://app.diagrams.net/) They are a roadmap and do not have to be 100% accurate of the final product.
+![game Flow Chart](assets/README/who_wants_to_be_a_millionaire.png)
 
 ## Data Model/ Classes
 🚨**Required** 
