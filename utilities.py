@@ -1,7 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import random
-from pprint import pprint
 from question import Question
 import re
 import os   # to detect the operating system
