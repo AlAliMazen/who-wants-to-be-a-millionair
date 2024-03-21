@@ -10,19 +10,8 @@ def main():
     """
     the main function of the game
     """
-
-    """ current_directory = os.getcwd()
-    easy_questions=current_directory+"/easy-questions.txt"
-    easy_questions=utilities.read_file(easy_questions)
-    utilities.update_questions_worksheet("easy_questions",easy_questions)
-    
-    medium_questions=current_directory+"/medium-questions.txt"
-    medium_questions=utilities.read_file(medium_questions)
-    utilities.update_questions_worksheet("medium_questions",medium_questions)
-
-    hard_questions=current_directory+"/hard-questions.txt"
-    hard_questions=utilities.read_file(hard_questions)
-    utilities.update_questions_worksheet("hard_questions",hard_questions) """
+    utilities.read_questions_txt_files()
+    utilities.clear_console()
     exit = False
     while not exit:
         utilities.print_game_menu()

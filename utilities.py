@@ -168,6 +168,24 @@ def update_questions_worksheet(question_level, questions_list):
     else:
         print(f'{question_level} worksheet has already populated with questions\n')
 
+def read_questions_txt_files():
+    """
+    Used only one time to populate the Google sheet with the questions
+    It won't don anything if the google sheet has questions already.
+    """
+    current_directory = os.getcwd()
+    easy_questions=current_directory+"/easy-questions.txt"
+    easy_questions=read_file(easy_questions)
+    update_questions_worksheet("easy_questions",easy_questions)
+    
+    medium_questions=current_directory+"/medium-questions.txt"
+    medium_questions=read_file(medium_questions)
+    update_questions_worksheet("medium_questions",medium_questions)
+
+    hard_questions=current_directory+"/hard-questions.txt"
+    hard_questions=read_file(hard_questions)
+    update_questions_worksheet("hard_questions",hard_questions)
+
 
 def get_random_question_index(questions_list):
     """
