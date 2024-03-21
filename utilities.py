@@ -65,11 +65,11 @@ def print_game_menu():
 
 def show_game_instructions():
     """
-    print the instruction 
+    print game instructions 
     """
     padding=15
     print(" ".rjust(padding)+"This game start by asking you to type your fullname and country. These information will be saved")
-    print(" ".rjust(padding)+"in a database and used for scoring comparisons.\n\n")
+    print(" ".rjust(padding)+"in a database and used for scoring comparisons.\n")
     print(" ".rjust(padding)+"After typing your fullname and country, the game starts to show 15 questions after each other and every")
     print(" ".rjust(padding)+"question has four choices 1 to 4 . You can type your choice as digits not letters.\n")
     print(" ".rjust(padding)+"If your choice is correct, then you get 100 $ (virtually). Otherwise, you will lose the round and ")
@@ -93,6 +93,9 @@ def get_user_choice():
             print("Invalid choice either Y or E n")
 
 def clear_console():
+    """
+    cleaning the console and give more clear UI to the game
+    """
     system = platform.system()
     if system == "Windows":
         return os.system('cls')
@@ -138,10 +141,12 @@ def validate_string_input(str_input,type):
 
 
 def validate_integer_input(usr_choice):
+    """
+    return False if the user input is less than 0 or grater than 4 or letters
+    """
     pattern=r'^[1-4]$'
     try:
         if not bool(re.match(pattern,usr_choice)):
-            print("it is here")
             raise ValueError(f'{usr_choice} is not a valid choice \n')
     except ValueError as e:
         print(f"Invalid Choice: {e}")
@@ -151,6 +156,9 @@ def validate_integer_input(usr_choice):
 
 
 def update_questions_worksheet(question_level, questions_list):
+    """
+    used when reading questions from text files and update the questions worksheets i.e. population the google worksheet.
+    """
     questions=SHEET.worksheet(question_level)
     data=questions.get_all_values()
     if len(data)==1:
@@ -204,10 +212,16 @@ def get_questions_ready():
     return all_player_questions
         
 def get_question(index):
+    """
+    initialize a question object and return it back
+    """
     question_obj=Question(index)
     return question_obj
     
 def print_question_with_choices(question,index):
+    """
+    print the question in certain style inside the question
+    """
     padding=10
     option_padding=padding*2
     print(f' '.ljust(padding)+str(index+1)+" "+question.get_question_txt().ljust(padding)+'')
@@ -218,6 +232,9 @@ def print_question_with_choices(question,index):
     print(f''.ljust(option_padding)+'4 ) '+question.get_question_option(4).ljust(option_padding)+'\n')
 
 def print_player_info(player, q_index):
+    """
+    Show the current player information at the top of the Game UI
+    """
     level="Easy"
     if q_index >10:
         level="Hard"
@@ -244,7 +261,5 @@ def print_winner_info(player, index):
         scoring.append(ind)
     scoring.append(level)
     scoring.append(now)
-    for x in scoring:
-        print(type(x))
     scoring_sheet=SHEET.worksheet("scoring")
     scoring_sheet.append_row(scoring)

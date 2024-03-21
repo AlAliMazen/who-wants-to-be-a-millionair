@@ -18,8 +18,7 @@ class Question:
         """
         chick user answer whether it is the same as the question real answer
         """
-        print(f'question class . user choice: {usr_answer}')
-        print(f'the right answer is  : {self.r_index}')
+        print(f'The right answer is  : {self.r_index}')
         return True if self.r_index==usr_answer else False
     
 

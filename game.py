@@ -24,8 +24,6 @@ def main():
     hard_questions=utilities.read_file(hard_questions)
     utilities.update_questions_worksheet("hard_questions",hard_questions) """
     exit = False
-    win = False
-    usr_choices=[]
     while not exit:
         utilities.print_game_menu()
         game_choice=input("Your choice: \n")
@@ -52,7 +50,7 @@ def main():
                             print("it is valid input")
                             break
                         else:
-                            print("it is not valid input\n")
+                            print("Invalid option\n")
                     
                     if question.check_usr_answer(usr_selection):
                         print("Correct \n")
@@ -64,7 +62,7 @@ def main():
                             exit =True
                             break
                     else:
-                        print("Your choice is wrong\n")
+                        print("Your choice is wrong\n Game Over!\n")
                         #update score and finish the game
                         time.sleep(3) # to let console pause
                         utilities.clear_console()
