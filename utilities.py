@@ -233,6 +233,6 @@ def print_winner_info(player, index):
     """
     now= datetime.datetime.now().strftime("%d.%m.%Y %X")
     print(" ".rjust(25)+"Congratulations ! You are a millionaire now")
-    print(' '.rjust(15)+player[0]+' Country: '+player[1]+' Score: '+player[2]+" Date: "+now)
+    print(' '.rjust(15)+"Fullname: "+player[0]+' Country: '+player[1]+' Score: '+str(player[2])+" Date: "+now)
     
     

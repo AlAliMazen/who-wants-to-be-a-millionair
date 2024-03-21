@@ -6,8 +6,6 @@ import time
 
 
 
-
-
 def main():
     """
     the main function of the game
