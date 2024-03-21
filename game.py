@@ -40,7 +40,7 @@ def main():
                 #starting the game
                 questions=utilities.get_questions_ready()
                 
-                for index in range(15):
+                for index in range(2):
                     utilities.print_player_info(player_obj.get_player_with_score(),index+1)
                     utilities.print_game_title()
                     question=utilities.get_question( questions[index])
@@ -59,7 +59,7 @@ def main():
                         player_obj.increase_player_score(index+1)
                         time.sleep(3) # to let console pause
                         utilities.clear_console()
-                        if index+1==15:
+                        if index+1==2:
                             utilities.print_winner_info(player_obj.get_player_with_score(),index+1)
                             exit =True
                             break

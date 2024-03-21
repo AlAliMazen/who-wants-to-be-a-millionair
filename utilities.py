@@ -231,8 +231,20 @@ def print_winner_info(player, index):
     print the winner information to the console
     update the database
     """
+    level = 'Easy'
+    if index >10:
+        level = 'Hard'
+    elif index>5:
+        level = 'Medium'
     now= datetime.datetime.now().strftime("%d.%m.%Y %X")
     print(" ".rjust(25)+"Congratulations ! You are a millionaire now")
     print(' '.rjust(15)+"Fullname: "+player[0]+' Country: '+player[1]+' Score: '+str(player[2])+" Date: "+now)
-    
-    
+    scoring=[]
+    for ind in player:
+        scoring.append(ind)
+    scoring.append(level)
+    scoring.append(now)
+    for x in scoring:
+        print(type(x))
+    scoring_sheet=SHEET.worksheet("scoring")
+    scoring_sheet.append_row(scoring)
