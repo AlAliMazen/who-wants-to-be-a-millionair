@@ -67,7 +67,10 @@ def main():
                     print("Finish Game")
                     exit=True
                
-
             elif int(game_choice)==3:
+                utilities.get_scoring_board()
+                exit = True
+            elif int(game_choice)==4:
+                print(" ".rjust(25)+"Quitting the Game\n\n")
                 exit = True
 

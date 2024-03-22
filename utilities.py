@@ -59,7 +59,8 @@ def print_game_menu():
     padding=15
     print(" ".rjust(padding)+"1 ) Start the game")
     print(" ".rjust(padding)+"2 ) How to play this game (show instructions)?")
-    print(" ".rjust(padding)+"3 ) Quite\n\n")
+    print(" ".rjust(padding)+"3 ) Show Scoring Board")
+    print(" ".rjust(padding)+"4 ) Quite\n\n")
 
 
 def show_game_instructions():
@@ -291,4 +292,15 @@ def print_winner_info(player, index):
     print(" ".rjust(25)+"Congratulations ! You are a millionaire now")
     print(' '.rjust(15)+"Fullname: "+player[0]+' Country: '+player[1]+' Score: '+str(player[2])+" Date: "+now)
     update_scoring_sheet(player, index)
+    
+def get_scoring_board():
+    scoring_sheet=SHEET.worksheet('scoring').get_all_values()
+    scoring_sheet=scoring_sheet[1:]
+    sorted_data = sorted(scoring_sheet, key=lambda x: x[2])
+
+    # Print the sorted list
+    gap=15
+    print(" ".rjust(gap//3)+"Full name".ljust(gap)+"Country".ljust(gap)+"Score".ljust(gap)+"Level".ljust(gap)+"Date".ljust(gap))
+    for row in sorted_data:
+        print(" ".rjust(gap//3)+row[0].ljust(gap)+row[1].ljust(gap)+row[2].ljust(gap)+row[3].ljust(gap)+row[4].ljust(4))
     
