@@ -129,25 +129,58 @@ The following flow chart shows how the game starts and what happen by choosing o
 ## Data Model/ Classes
 🚨**Required** 
 
-In this section write our your data model(s) or classes. 
+### Player
 
-You might want to include subsections that include how the data in the model is initialized and then the methods that you created to update it through the program.
+As the name implies the ***Player*** class is created to collect the player information like full name and country and it gives a default score of zero to the player object. The class has then the following properties:
 
-
-You can create a table and take a screenshot, or you can write up subsections in markdown:
-
-![image](https://user-images.githubusercontent.com/23039742/130148204-b56406bf-0fff-48f3-9dee-2f3cdbe67cc5.png)
-
-### Class X
-To better group the game as an object, I wrote a class representing its properties and had method functions to update those properties: 
 
 **Properties**
-- property 1: is a {string} it represents {something} 
-- property 2: is a {string} it represents {something} 
+- full name 1: is a {string} type like in John Smith. It can't have any special character.
+- country 2: is a {string} it represents the country of the player and it also can't have any special character.
+- score 3: is an integer type initialized with 0 as default type when an object of the Player class.
 
 **Methods**
-- **\_\_init\_\_**: Initialize method, it starts the class off with default parameters as if a user just started to play a game.
-- **\_\_str\_\_**: Returns a string representation of the class/object
+- **\_\_init\_\_**: Initialize method, it starts the class off a list which holds the values of full name and country.
+- **get_player_details(self)**: It returns the details of the current player as a list (full name and country).
+- **get_player_with_score(self)**: It returns the current player details with h/her score as a list.
+- **increase_player_score(self, index)**: Based on the index of the question, the score is going to be increased be itself. In order to get the million after answering 15 questions, then two questions should be assigned by magic win values (Question 5 and question 12 for example).
+- **update_safety_score(self)**: this method works as a safety limit when the player loses the round. If Player loses when s/he got more than 1000 $, it will return to 10000 . Likewise, when Player gets more than 32000 s/he get back to the 32000 . It returns the last valid score.
+
+### Question
+
+The second class used inside this version of the game is the question it self. This Class is used for each question shown. When the game starts, the play gets a complete list of 15 randomly selected questions and every question is an object of this class.
+
+Questions are of three levels easy, medium and hard. Questions are going to be read from text files and uploaded to the google sheets. the question inside the file has a question and four options and the index of the right answer at the end.
+
+**Properties**
+
+- question: the question itself like in what's the smallest prime number.
+- option a til d : the options of the shown question from a to b and will be shown as 1 to 4 .
+- r_index: the right answer index : this index is used to check against the player's choice. 
+
+It is worth mentioning that all the previous properties are used in the constructor to initialize the object. These properties are given as a list from the ***utilities*** Module.
+
+**Methods**
+
+- **check_usr_answer(self, usr_answer)**: It return True when the usr_answer parameter is the same as the r_index of the question object.
+- **get_question_txt(self)**: When the question class is called, an object of this class is initialized and it makes it easier to control it. This method returns the question text itself. 
+- **get_question_option(self, option)**: since the question is an object, this function will give a static index to this function and it returns the option of that question at this index. 
+
+## Data Module
+
+### utilities
+This is the main python where the heavy load is executed. This file contains only functions and it is procedural; that is, it contains no class only objects of the previous two classes. Functions are as the following:
+
+- **split_list(list, single_question)**: used to split the questions' list into separated single lists of questions. Thus, if the list contains 20 questions in one single list, it be returned as a list of 20 lists and each list represents one single question. 
+
+- **read_file(file)**: used for reading the questions from text files line by line and collects the content in a list. It calls the split_list function to split the big list into single question.
+- **print_game_title()**: used to print the Game title every time the game starts and a new question is printed.
+- **print_game_menu()**: Called whenever the game starts or after the rules are shown. It shows the 4 options available for the player. It is worth mentioning that the two previous functions print the title, options and the question later on as formatted style; that is in the middle of the console with padding before and after the text. 
+- **show_game_instructions()**: When player selects number 2, the rules and how-to play instructions are shown. 
+- **get_user_choice()**: called after the instructions are shown and waits till player chooses either y for yes to go back to the main options or e for quitting the game.
+- **clear_console()**: This function clears the console after player types h/his option. It makes use of the os and platform module to detect the operation system and give the corresponding command to the terminal either cls for Windows prompt and clear for macOS and Linux terminals. 
+
+- **get_player_data()**: used when the player is asked to type his full name and country and makes use of input() function. It calls the validation function to check the player input.
 
 ## Libraries used
 🚀 **merit & beyond**
