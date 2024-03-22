@@ -259,6 +259,23 @@ def print_player_info(player, q_index):
         level="Medium"
     print(f'Player name:{player[0]}   Country: {player[1]}   Score {player[2]}   Level: {level}')
 
+def update_scoring_sheet(player, index):
+    """
+    called when player loses the round to update the sheet.
+    """
+    level = 'Easy'
+    if index >10:
+        level = 'Hard'
+    elif index>5:
+        level = 'Medium'
+    now= datetime.datetime.now().strftime("%d.%m.%Y %X")
+    scoring=[]
+    for ind in player:
+        scoring.append(ind)
+    scoring.append(level)
+    scoring.append(now)
+    scoring_sheet=SHEET.worksheet("scoring")
+    scoring_sheet.append_row(scoring)
 
 def print_winner_info(player, index):
     """
@@ -273,10 +290,5 @@ def print_winner_info(player, index):
     now= datetime.datetime.now().strftime("%d.%m.%Y %X")
     print(" ".rjust(25)+"Congratulations ! You are a millionaire now")
     print(' '.rjust(15)+"Fullname: "+player[0]+' Country: '+player[1]+' Score: '+str(player[2])+" Date: "+now)
-    scoring=[]
-    for ind in player:
-        scoring.append(ind)
-    scoring.append(level)
-    scoring.append(now)
-    scoring_sheet=SHEET.worksheet("scoring")
-    scoring_sheet.append_row(scoring)
+    update_scoring_sheet(player, index)
+    

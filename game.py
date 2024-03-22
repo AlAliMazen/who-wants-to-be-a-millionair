@@ -47,6 +47,7 @@ def main():
                         time.sleep(3) # to let console pause
                         utilities.clear_console()
                         if index+1==15:
+                            player_obj.update_safety_score()
                             utilities.print_winner_info(player_obj.get_player_with_score(),index+1)
                             exit =True
                             break
@@ -54,6 +55,7 @@ def main():
                         print("\n\nYour choice is wrong\n Game Over!\n")
                         #update score and finish the game
                         player_obj.update_safety_score()
+                        utilities.update_scoring_sheet(player_obj.get_player_with_score(),index+1)
                         time.sleep(3)
                         utilities.clear_console()
                         utilities.print_player_info(player_obj.get_player_with_score(), index)
