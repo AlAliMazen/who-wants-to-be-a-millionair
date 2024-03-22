@@ -33,20 +33,21 @@ def read_file(file):
     and return a list of lists from the questions
     """
     print( "Reading questions")
-    content=[]
+    content = []
     with open(file, 'r') as file:
         lines = file.readlines()
         for line in lines:
             content.append(line.strip())  # Stripping '\n' character from each line
         
-        questions=split_list(content,6)
+        questions = split_list(content, 6)
         return questions
 
 def print_game_title():
     """
     when starting, restarting or cleaning the console, the title will be printed 
     """
-    padding=15
+    padding = 15
+    print("\n\n\n")
     print(" ".rjust(padding)+"|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|".ljust(padding))
     print(" ".rjust(padding)+"|      WHO WANTS TO BE A MILLIONAIRE          |".ljust(padding))
     print(" ".rjust(padding)+"|_____________________________________________|".ljust(padding)+"\n\n")
@@ -56,7 +57,7 @@ def print_game_menu():
     Greeting the user and show the Game menu
     """
     print_game_title()
-    padding=15
+    padding = 15
     print(" ".rjust(padding)+"1 ) Start the game")
     print(" ".rjust(padding)+"2 ) How to play this game (show instructions)?")
     print(" ".rjust(padding)+"3 ) Show Scoring Board")
@@ -67,7 +68,7 @@ def show_game_instructions():
     """
     print game instructions 
     """
-    padding=15
+    padding = 15
     print(" ".rjust(padding)+"This game start by asking you to type your fullname and country. These information will be saved")
     print(" ".rjust(padding)+"in a database and used for scoring comparisons.\n")
     print(" ".rjust(padding)+"After typing your fullname and country, the game starts to show 15 questions after each other and every")
@@ -82,10 +83,10 @@ def get_user_choice():
     """
     while True:
         choice=input("For Menu press Y  To finish the Game E\nYour input: \n")
-        if choice.lower()=="e":
+        if choice.lower() == "e":
             print("choice is e or E")
             return "e"
-        elif choice.lower()=="y":
+        elif choice.lower() == "y":
             print("Showing the Game main\n")
             clear_console()
             return "y"
@@ -108,28 +109,28 @@ def get_player_data():
     """
     get player fullname, country, email and birth year
     """
-    player_data=[]
+    player_data = []
     while True:
-        fullname=input("Enter your fullname please as John smith for example\n")
-        if validate_string_input(fullname,"Fullname"):
+        fullname = input("Enter your fullname please as John smith for example\n")
+        if validate_string_input(fullname, "Fullname"):
             player_data.append(fullname)
             break
     while True:
-        country=input("Where are you from?\n")
-        if validate_string_input(country,"Country"):
+        country = input("Where are you from?\n")
+        if validate_string_input(country, "Country"):
             player_data.append(country)
             break
     return player_data
 
 
-def validate_string_input(str_input,type):
+def validate_string_input(str_input, type):
     """
     using RegEx regular expression to evaluate the name of the user
     """
     pattern = r'^[a-zA-Z ]+$'
     print("in validating string method "+str_input)
     try:
-        if len(str_input)==0 :
+        if len(str_input) == 0 :
             raise ValueError(f"{type} can't be empty")
         elif not re.match(pattern, str_input):
             raise ValueError(f"{type}  can only have letters both in lower and uppercase and spaces NO numeric values!")
@@ -144,7 +145,7 @@ def validate_integer_input(usr_choice):
     """
     return False if the user input is less than 0 or grater than 4 or letters
     """
-    pattern=r'^[1-4]$'
+    pattern = r'^[1-4]$'
     try:
         if not bool(re.match(pattern,usr_choice)):
             raise ValueError(f'{usr_choice} is not a valid choice \n')
@@ -159,9 +160,9 @@ def update_questions_worksheet(question_level, questions_list):
     """
     used when reading questions from text files and update the questions worksheets i.e. population the google worksheet.
     """
-    questions=SHEET.worksheet(question_level)
+    questions = SHEET.worksheet(question_level)
     data=questions.get_all_values()
-    if len(data)==1:
+    if len(data) == 1:
         print(f'update{question_level} worksheet ...\n')
         questions.append_rows(questions_list)
         print(f'{question_level} worksheet was updated successfully\n')
@@ -174,17 +175,17 @@ def read_questions_txt_files():
     It won't don anything if the google sheet has questions already.
     """
     current_directory = os.getcwd()
-    easy_questions=current_directory+"/easy-questions.txt"
-    easy_questions=read_file(easy_questions)
-    update_questions_worksheet("easy_questions",easy_questions)
+    easy_questions = current_directory+"/easy-questions.txt"
+    easy_questions = read_file(easy_questions)
+    update_questions_worksheet("easy_questions", easy_questions)
     
-    medium_questions=current_directory+"/medium-questions.txt"
-    medium_questions=read_file(medium_questions)
-    update_questions_worksheet("medium_questions",medium_questions)
+    medium_questions = current_directory+"/medium-questions.txt"
+    medium_questions = read_file(medium_questions)
+    update_questions_worksheet("medium_questions", medium_questions)
 
     hard_questions=current_directory+"/hard-questions.txt"
     hard_questions=read_file(hard_questions)
-    update_questions_worksheet("hard_questions",hard_questions)
+    update_questions_worksheet("hard_questions", hard_questions)
 
 
 def get_random_question_index(questions_list):
@@ -192,7 +193,7 @@ def get_random_question_index(questions_list):
     get a random index which represents the question row starting at one to 
     exclude the headings till the last question
     """
-    selected_question_ist=[]
+    selected_question_ist = []
     while len(selected_question_ist)<5:
         index=random.randint(1,len(questions_list)-1)
         if not index in selected_question_ist:
@@ -204,27 +205,27 @@ def get_questions_ready():
     """
     prepare 15 randomly selected question and collect them in a list
     """
-    easy_questions=SHEET.worksheet("easy_questions").get_all_values()
-    medium_questions=SHEET.worksheet("medium_questions").get_all_values()
-    hard_questions=SHEET.worksheet("hard_questions").get_all_values()
+    easy_questions = SHEET.worksheet("easy_questions").get_all_values()
+    medium_questions = SHEET.worksheet("medium_questions").get_all_values()
+    hard_questions = SHEET.worksheet("hard_questions").get_all_values()
     
     #collect index in sets to avoid duplicates
-    easy_questions_indices=get_random_question_index(easy_questions)
-    medium_questions_indices=get_random_question_index(medium_questions)
-    hard_questions_indices=get_random_question_index(hard_questions)
+    easy_questions_indices = get_random_question_index(easy_questions)
+    medium_questions_indices = get_random_question_index(medium_questions)
+    hard_questions_indices = get_random_question_index(hard_questions)
     
-    all_player_questions=[]
+    all_player_questions = []
     
     for question in easy_questions_indices:
-        single_question=easy_questions[question]
+        single_question = easy_questions[question]
         all_player_questions.append(single_question)
 
     for question in medium_questions_indices:
-        single_question=medium_questions[question]
+        single_question = medium_questions[question]
         all_player_questions.append(single_question)
 
     for question in hard_questions_indices:
-        single_question=hard_questions[question]
+        single_question = hard_questions[question]
         all_player_questions.append(single_question)
 
     return all_player_questions
@@ -240,8 +241,8 @@ def print_question_with_choices(question,index):
     """
     print the question in certain style inside the question
     """
-    padding=10
-    option_padding=padding*2
+    padding = 10
+    option_padding = padding*2
     print(f' '.ljust(padding)+str(index+1)+" "+question.get_question_txt().ljust(padding)+'')
     print(f''.ljust(1)+"".center(len(str(index+1)+question.get_question_txt())+option_padding,"-")+'')
     print(f''.ljust(option_padding)+'1 ) '+question.get_question_option(1).ljust(option_padding))
@@ -253,9 +254,9 @@ def print_player_info(player, q_index):
     """
     Show the current player information at the top of the Game UI
     """
-    level="Easy"
+    level = "Easy"
     if q_index >10:
-        level="Hard"
+        level = "Hard"
     elif q_index>5:
         level="Medium"
     print(f'Player name:{player[0]}   Country: {player[1]}   Score {player[2]}   Level: {level}')
@@ -269,13 +270,13 @@ def update_scoring_sheet(player, index):
         level = 'Hard'
     elif index>5:
         level = 'Medium'
-    now= datetime.datetime.now().strftime("%d.%m.%Y %X")
+    now = datetime.datetime.now().strftime("%d.%m.%Y %X")
     scoring=[]
     for ind in player:
         scoring.append(ind)
     scoring.append(level)
     scoring.append(now)
-    scoring_sheet=SHEET.worksheet("scoring")
+    scoring_sheet = SHEET.worksheet("scoring")
     scoring_sheet.append_row(scoring)
 
 def print_winner_info(player, index):
@@ -294,11 +295,12 @@ def print_winner_info(player, index):
     update_scoring_sheet(player, index)
     
 def get_scoring_board():
-    scoring_sheet=SHEET.worksheet('scoring').get_all_values()
-    scoring_sheet=scoring_sheet[1:]
+    """
+    print the Scoring Board from google sheet
+    """
+    scoring_sheet = SHEET.worksheet('scoring').get_all_values()
+    scoring_sheet = scoring_sheet[1:]
     sorted_data = sorted(scoring_sheet, key=lambda x: x[2])
-
-    # Print the sorted list
     gap=15
     print(" ".rjust(gap//3)+"Full name".ljust(gap)+"Country".ljust(gap)+"Score".ljust(gap)+"Level".ljust(gap)+"Date".ljust(gap))
     for row in sorted_data:
