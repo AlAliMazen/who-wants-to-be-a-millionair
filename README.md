@@ -181,6 +181,30 @@ This is the main python where the heavy load is executed. This file contains onl
 - **clear_console()**: This function clears the console after player types h/his option. It makes use of the os and platform module to detect the operation system and give the corresponding command to the terminal either cls for Windows prompt and clear for macOS and Linux terminals. 
 
 - **get_player_data()**: used when the player is asked to type his full name and country and makes use of input() function. It calls the validation function to check the player input.
+- **validate_string_input(str_input, type)**: used to check if the player's full name has noc special character. It makes use of the regular expressions which accepts only small and capital letters with spaces.
+- **validate_integer_input(usr_choice)**: used to check if the numeric user input whether it is from the main menu or the questions options. It checks that the input contains only options from 1 to 4 .
+
+- **update_questions_worksheet(question_level,questions_list)**: after splitting the question list into mini lists of single questions, this function takes that lists and insert them into the google sheet. 
+
+- **read_questions_txt_files()**: this function makes use of the os library and the function get current working directory getcwd() which ready the directory of the question files and then reads the question into variables. Then it calls the update_questions_worksheet().
+
+- **get_random_question_index(question_list)**: this function is used to get five random questions from the given question list.
+
+- **get_question_ready()**: it prepares a list of ordered 15 questions in a list. The first 5 questions are easy, then medium and the last 5 are hard questions. This functions makes a call to the google sheet to load all the questions in all levels in separated lists.
+
+- **get_question(index)**: this is where a question object is created and the index is going to be from the UI interface in a loop fo 15 indexes. The list which is created in the previous function is used to be iterated and the index is the list which is used to initialized the question object.
+
+- **print_question_with_choices(question, index)**: prints the question object with its choices as formatted text with padding and the question is printed underlined. 
+
+- **print_player_info(player, q_index)**: When the game starts the player object is used in this function to print a line at the top of the console to show the current player name, country, score and level. the second parameter q_index is used to detect the question level. 
+
+- **update_scoring_sheet(player, index)**: 
+used to update the google sheet when the player wins or loses the round. It makes a call to update the scoring sheet with player info and h/his score with the date.
+
+- **print_winner_info(player, index)**:gets called when the player only wins the game to print a text indicating that the game is over and player has won the prize.
+
+- **get_scoring_board()**: When a player chooses number 3 right from the beginning to see the scoring board, this function is called to print sorted results of the player who participate in the game with their details (full name, country, score, level of question reached and date).
+
 
 ## Libraries used
 🚀 **merit & beyond**
