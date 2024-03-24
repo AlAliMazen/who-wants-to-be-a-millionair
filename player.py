@@ -40,3 +40,9 @@ class Player:
             self.score
         
         return self.score
+    
+    def play_again(self):
+        """
+        reset the score of current player to zero
+        """
+        self.score=0

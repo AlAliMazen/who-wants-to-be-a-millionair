@@ -307,4 +307,14 @@ def get_scoring_board():
     print(" ".rjust(gap//3)+"Full name".ljust(gap)+"Country".ljust(gap)+"Score".ljust(gap)+"Level".ljust(gap)+"Date".ljust(gap))
     for row in sorted_data:
         print(" ".rjust(gap//3)+row[0].ljust(gap)+row[1].ljust(gap)+row[2].ljust(gap)+row[3].ljust(gap)+row[4].ljust(4))
-    
+
+def play_again_mechanism(player_obj):
+    while True:
+        second_round=input("Do you want to play again\n Y for yes N for No\n")
+        if str.lower(second_round) == "y":
+            player_obj.play_again()
+            return True
+        elif str.lower(second_round) == "n":
+            return False
+        else:
+            print("Invalid choice.\n\n")
