@@ -112,12 +112,12 @@ def get_player_data():
     player_data = []
     while True:
         fullname = input("Enter your fullname please as John smith for example\n")
-        if validate_string_input(fullname, "Fullname"):
+        if validate_string_input(fullname.strip(), "Fullname"):
             player_data.append(fullname)
             break
     while True:
         country = input("Where are you from?\n")
-        if validate_string_input(country, "Country"):
+        if validate_string_input(country.strip(), "Country"):
             player_data.append(country)
             break
     return player_data
@@ -146,6 +146,8 @@ def validate_integer_input(usr_choice):
     return False if the user input is less than 0 or grater than 4 or letters
     """
     pattern = r'^[1-4]$'
+    print("User question choice: "+usr_choice)
+
     try:
         if not bool(re.match(pattern,usr_choice)):
             raise ValueError(f'{usr_choice} is not a valid choice \n')

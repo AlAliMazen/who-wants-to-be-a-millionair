@@ -32,11 +32,11 @@ def main():
                     utilities.print_question_with_choices(question, index)
                     while True:
                         usr_selection=input("Enter your choice from 1 to 4 \n")
-                        if utilities.validate_integer_input(usr_selection):
+                        if utilities.validate_integer_input(usr_selection.strip()):
                             break
                         else:
                             print("Invalid option\n")
-                    if question.check_usr_answer(usr_selection):
+                    if question.check_usr_answer(usr_selection.strip()):
                         print("Correct \n")
                         player_obj.increase_player_score(index+1)
                         time.sleep(3)
@@ -48,7 +48,6 @@ def main():
                             break
                     else:
                         print("\n\nYour choice is wrong\n Game Over!\n")
-                        #update score and finish the game
                         player_obj.update_safety_score()
                         utilities.update_scoring_sheet(player_obj.get_player_with_score(), index+1)
                         time.sleep(3)
