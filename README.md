@@ -17,7 +17,10 @@ In Software industry, it is extremely important to have a complete understanding
 ![Flowchart](assets/README/who_wants_to_be_a_millionaire.png)
 
 Following is a video about the end product:
-https://github.com/AlAliMazen/who-wants-to-be-a-millionair/assets/153659892/0f9f22d2-5fa3-4aae-aa14-b2be744827a1
+
+
+https://github.com/AlAliMazen/who-wants-to-be-a-millionair/assets/153659892/3c86518a-9145-4fe7-a29b-fea526366e72
+
 
 
 
