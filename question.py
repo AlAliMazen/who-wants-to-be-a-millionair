@@ -1,7 +1,7 @@
 from pprint import pprint
 class Question:
     """
-    every question is going to be gathered in a set to guantee that 
+    every question is going to be gathered in a set to ensure that 
     it has no duplicates
     """
     def __init__(self, question):

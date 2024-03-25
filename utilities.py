@@ -309,6 +309,10 @@ def get_scoring_board():
         print(" ".rjust(gap//3)+row[0].ljust(gap)+row[1].ljust(gap)+row[2].ljust(gap)+row[3].ljust(gap)+row[4].ljust(4))
 
 def play_again_mechanism(player_obj):
+    """
+    Asking player if s/he play again. 
+    param: player_obj: is choice is yes the score should be reset
+    """
     while True:
         second_round=input("Do you want to play again\n Y for yes N for No\n")
         if str.lower(second_round) == "y":

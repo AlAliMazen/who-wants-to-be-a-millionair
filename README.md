@@ -149,6 +149,8 @@ As the name implies the ***Player*** class is created to collect the player info
 - **increase_player_score(self, index)**: Based on the index of the question, the score is going to be increased be itself. In order to get the million after answering 15 questions, then two questions should be assigned by magic win values (Question 5 and question 12 for example).
 - **update_safety_score(self)**: this method works as a safety limit when the player loses the round. If Player loses when s/he got more than 1000 $, it will return to 10000 . Likewise, when Player gets more than 32000 s/he get back to the 32000 . It returns the last valid score.
 
+- **play_again(self)**: called only to reset the current player score back to zero. It is called when player loses the round or wins the game.
+
 ### Question
 
 The second class used inside this version of the game is the question it self. This Class is used for each question shown. When the game starts, the play gets a complete list of 15 randomly selected questions and every question is an object of this class.
@@ -208,6 +210,21 @@ used to update the google sheet when the player wins or loses the round. It make
 
 - **get_scoring_board()**: When a player chooses number 3 right from the beginning to see the scoring board, this function is called to print sorted results of the player who participate in the game with their details (full name, country, score, level of question reached and date).
 
+- **play_again_mechanism(player_obj)**: When player loses the round or wins the game, then player is going to be asked to play again. If the choice is yes, then the score of the same player should be reset to zero. 
+
+- **end_game_message()**: when player ends the game or wants to quit the game, then this function is called to print a nice message. 
+
+
+### game
+
+this module contains the main function which is used to wait for user input. When game starts it shows four choices and each choice will call a function from the ***utilities*** python file. 
+
+- **get_player_info()**: used to get the details of the player when s/he starts the game. Then, it updates the google sheet.
+
+- **start_game(player_obj)**: As the name implies, this function is called when the game itself starts. It gets the questions list ready and starts through a loop of 15 iterations.
+
+- **main()**: the main function when the game runs. This function is going to be called from the run.py.
+
 
 ## Libraries used
 🚀 **merit & beyond**
@@ -239,7 +256,7 @@ used to update the google sheet when the player wins or loses the round. It make
 ## Testing
 🚨**Required** 
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your features and ensure that they all work as intended in an easy and straightforward way for the users to achieve their goals.
+This section will shed light on validation of my code according the standards of python and some strategies which help to maintain readability.
 
 
 ### Validation Testing
@@ -300,38 +317,15 @@ Some defects are more pesky than others. Highlight 3-5 of the bugs that drove yo
 ### Outstanding Defects
 🚨**Required** 
 
-It's ok to not resolve all the defects you found as long as:
-- it does not impact a user from completing a vital function on the website
-- it only affects a very small subset of users
-- is an extreme edge case that very few users would try
-- there is an open issue against a framework, browser or technology used
+I don't know if the following issus is considered as a failure. It is only present on the deployed version. Since the console is not completely cleared, then player can scroll up and see the past questions and options.
 
-If you know of something that isn't quite right, create an issue and link to it here and explain why you chose not to resolve it. 
-
-Sometimes it's as simple, word wrapping issue that makes the site look odd at a certain screensize that you just didn't have time to fix due to the impending deadline it's best to mention it but note why you allowed it to go live: "Yes it looks odd, but it doesn't impact core functionality of the site." than to let the accessors think you didn't notice it. 
 
 ### Commenting Code
 🚀 **merit & beyond**
 
-Make sure you use triple double quotes to document functions and classes.
- Here'a  documentation worthy example:
-```$python
-def yes_no(question):
-    """
-    Function to ask a simple yes no question of the user.
-    :param question: String displayed as the question
-    :return: answer: String equal to "1" or "2" representing yes or no respectfully
-    """
-    print(question)
-    print("yes = 1")
-    print("no = 2")
-    answer = input("enter your answer here \n").strip()
-    while answer not in ("1", "2"):
-        print("please choose 1 for yes and 2 for no")
-        answer = input("enter your answer here \n").strip()
-    return answer
+Every function in the code whether it is inside a class or a module is commented as descriptive as possible. The main purpose of the comment is to indicate the purpose why the function is written and what it does. 
 
-```
+It is worth mentioning that all the functions are also explained here in the README file.
 
 ## Deployment
 🚨**Required** 
@@ -339,9 +333,12 @@ def yes_no(question):
 ### Prerequisites
 🚨**Required** 
 
-If the user is required to have certain keys and credentials you should include this section with directions on how to get the necessary information.
-ex)
+
 1. **Google Account:** In order to have this program work, you need a google account. If you don't have one  [Create a google account](https://accounts.google.com/Signup)
+
+2. **Google Sheets**: After setting up an account (free) I had to set a google sheet like an excel for the following player, easy_quesitons, medium_questions, hard_questions, scoring. These working sheets are inside one sheet called "who_wants_to_be_a_millionair"
+
+following screenshots are the structure of the pre-mentioned working sheets
 2. **Google APIs**
     1. in a new incognito tab, log into your new google account.
     1. then update the url to be: https://console.cloud.google.com/getting-started?pli=1 
