@@ -75,7 +75,9 @@ def main():
                     exit=True
             elif int(game_choice)==3:
                 utilities.get_scoring_board()
-                exit = True
+                if utilities.get_user_choice() == "e":
+                    utilities.end_game_message()
+                    exit=True
             elif int(game_choice)==4:
                 utilities.end_game_message()
                 exit = True

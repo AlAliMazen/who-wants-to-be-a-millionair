@@ -291,7 +291,7 @@ def print_winner_info(player, index):
         level = 'Hard'
     elif index>5:
         level = 'Medium'
-    now= datetime.datetime.now().strftime("%d.%m.%Y %X")
+    now= datetime.datetime.now().strftime("%d.%m.%Y")
     print(" ".rjust(25)+"Congratulations ! You are a millionaire now")
     print(' '.rjust(15)+"Fullname: "+player[0]+' Country: '+player[1]+' Score: '+str(player[2])+" Date: "+now)
     update_scoring_sheet(player, index)
@@ -302,11 +302,15 @@ def get_scoring_board():
     """
     scoring_sheet = SHEET.worksheet('scoring').get_all_values()
     scoring_sheet = scoring_sheet[1:]
-    sorted_data = sorted(scoring_sheet, key=lambda x: x[2])
-    gap=15
-    print(" ".rjust(gap//3)+"Full name".ljust(gap)+"Country".ljust(gap)+"Score".ljust(gap)+"Level".ljust(gap)+"Date".ljust(gap))
+    sorted_data = sorted(scoring_sheet, key=lambda x: x[2], reverse=True)
+    gap=20
+    clear_console()
+    print("".rjust(gap//5)+"Full name".ljust(gap)+"Country".ljust(gap)+"Score".ljust(gap)+"Level".ljust(gap)+"Date".ljust(gap)+"\n")
+    
     for row in sorted_data:
-        print(" ".rjust(gap//3)+row[0].ljust(gap)+row[1].ljust(gap)+row[2].ljust(gap)+row[3].ljust(gap)+row[4].ljust(4))
+        print("".rjust(gap//5)+row[0].ljust(gap)+row[1].ljust(gap)+row[2].ljust(gap)+row[3].ljust(gap)+row[4].ljust(4))
+
+    print("\n\n\n")
 
 def play_again_mechanism(player_obj):
     """
