@@ -66,18 +66,17 @@ def main():
                     utilities.clear_console()
                     start_game(player_obj)                    
                 else:
-                    utilities.clear_console()
-                    print("\n\n\nThank you very much fr trying the game\n\n\n")
+                    utilities.end_game_message()
                     exit = True
             elif int(game_choice) == 2:
                 utilities.show_game_instructions()
                 if utilities.get_user_choice() == "e":
-                    print("Finish Game")
+                    utilities.end_game_message()
                     exit=True
             elif int(game_choice)==3:
                 utilities.get_scoring_board()
                 exit = True
             elif int(game_choice)==4:
-                print(" ".rjust(25)+"Quitting the Game\n\n")
+                utilities.end_game_message()
                 exit = True
 

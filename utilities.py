@@ -61,7 +61,7 @@ def print_game_menu():
     print(" ".rjust(padding)+"1 ) Start the game")
     print(" ".rjust(padding)+"2 ) How to play this game (show instructions)?")
     print(" ".rjust(padding)+"3 ) Show Scoring Board")
-    print(" ".rjust(padding)+"4 ) Quite\n\n")
+    print(" ".rjust(padding)+"4 ) Quit\n\n")
 
 
 def show_game_instructions():
@@ -318,3 +318,16 @@ def play_again_mechanism(player_obj):
             return False
         else:
             print("Invalid choice.\n\n")
+
+
+def end_game_message():
+    """
+    print farewell message when quitting game or losing the round
+    """
+    clear_console()
+    padding=15
+    print("\n\n\n")
+    print(" ".ljust(padding)+"Thank you very much for trying this Game")
+    print("\n")
+    print(" ".ljust(padding*2)+"Best wishes next time")
+    print("\n\n\n")
