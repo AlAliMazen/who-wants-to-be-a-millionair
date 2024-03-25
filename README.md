@@ -403,10 +403,28 @@ Scoring
 ![sharing sheets with Application](assets/README/G_Sharing.png)
 
 
+**ATTENTION**
+
+It is important to run the following command in order to install the dependencies required to connect and integration of Google API and Google Sheets. Thus, after adding the JSON file to the project directory, run the following commands
+
+  ```
+  pip3 install gspread google-auth
+  ````
+
+
 ### Heroku
 🚨**Required** 
 
 This section should describe the process for deploying the project on a live server for backend applications. Heroku is free for only 5 applications and it needs a credit card for setting up an account. I also followed the steps shown through the course. 
+
+***IMPORTANT**
+
+before heading to heroku, make sure to to run the following command in your IDE to freeze the packages in the requirements.tyt file. In other words, in your IDE and after making sure that everything is good run the following command in the terminal to list all the packages required for the deployment on Heroku.
+
+````
+pip3 freeze > requirements.txt
+````
+
 
 1.  New Project
 After successfully setting up an account go to the dashboard by clicking on the account icon on the top right corner and choose to create a new App from the "New" button shown.
@@ -417,57 +435,76 @@ After successfully setting up an account go to the dashboard by clicking on the 
 
 3. Head to **Settings** tab in order to set the "Config Vars" and "Build Packages"
 
-A. **Config Vars**
+  A. **Config Vars**
 
-  Because the credentials are  specific to each user, the JSON file which was downloaded from Google API should be also hidden when deployed. Add a new configuration variable  and past the value of JSON file as a value of the KEY which should also have a name with all capital letters 
+    Because the credentials are  specific to each user, the JSON file which was downloaded from Google API should be also hidden when deployed. Add a new configuration variable  and past the value of JSON file as a value of the KEY which should also have a name with all capital letters 
 
   ![Creds in HEROKU](assets/README/HEROKU_Config.png)
 
-  
+    
 
 
-B. **Build Packs**
+  B. **Build Packs**
 
-Under the build Packages, choose to add the python and then Node.js
+  Under the build Packages, choose to add the python and then Node.js
 
   ![image](https://user-images.githubusercontent.com/23039742/132135918-28cac112-7766-4277-905c-4a4963d8442d.png)
 
-  
+    
 
 
 4. Deploy
-A. Set up to github and select the correct repository:
+  
+  A. Under **Deploy** tab choose gitHub as main source of the code source
 
-  ![image](https://user-images.githubusercontent.com/23039742/132136113-c257c921-d10c-4ccc-af09-6a1d25136395.png)
+  B. Login to GitHub and choose the repository for the project you want to deploy.
 
-B. Deploy either manual or automatic
+  C. Scroll down to the **deploys** where there two kinds of deployment. If you want to let the Heroku to get the latest pushes ***Automatically** then choose **Automatic deploys** and click on save. Otherwise, choose **Manuel deploy** if you want the Heroku to deploy specific forks from the main GitHib Repo.
 
-![image](https://user-images.githubusercontent.com/23039742/132136241-9d76fabb-39f0-4696-bc5f-047398fdaf41.png) 
+  As for me, I chose the first option to let the Heroku deploy the latest updates to the master branch.
+
+  ![Heroku GitHub Deployment](assets/README/HEROKU_GitHub_main.png)
+
+  Clicking Yes and save will let the heroku look at the requirements file to start installing the required packages and deploy the app. When it is ready, it will show a link to open the App in both Heroku App page and on GitHub Project Repository.
 
 
 
 ## Credits
 🚨**Required** 
 
-To avoid plagiarism amd copyright infringement, you should mention any other projects, stackoverflow, videos, blogs, etc that you used to gather imagery or ideas for your code even if you used it as a starting point and modified things. Giving credit to other people's efforts and ideas that saved you time acknowledges the hard work others did. 
 
--[Code Institute Template](https://github.com/Code-Institute-Org/python-essentials-template)
-    - The Template for the GUI for this project was provided by Code Institute. This allows for the Command line to be shown and used within the browser.
+
+- [Code Institute Template](https://github.com/Code-Institute-Org/python-essentials-template) Used to set up the GitHub Repository and open it in the CodeAnyWhere IDE.
 
 ### Content
 🚨**Required** 
 
-Use bullet points to list out sites you copied text from and cross-reference where those show up on your site
+I have used the following websites to get some code references and example:
 
-### Media
-🚨**Required** 
+- Sorting python list [sorting python list - free code camp](https://www.freecodecamp.org/news/python-list-sorting-how-to-order-lists-in-python/)
 
-Make a list of sites you used images from. If you used several sites try to match up each image to the correct site. This includes attribution for icons if they came from font awesome or other sites, give them credit.
+- Adding padding to the text [Codeguage](https://www.codeguage.com/courses/python/strings-string-padding#:~:text=String%20padding%20is%20to%20extend,a%20table%20in%20the%20shell.)
+
+- Coloring the Console line [how do I colored text in python](https://ask.replit.com/t/how-do-i-make-colored-text-in-python/29288)
+
+- Classes in python is from [Python.org Docs](https://docs.python.org/3/tutorial/classes.html)
+
+- Regular Expressions in python [Python RegEx](https://www.w3schools.com/python/python_regex.asp)
+
+- Regular Expression from python official Docs [re — Regular expression operations](https://docs.python.org/3/library/re.html)
+
+- References for the gspread is from the official gspread documentation [gspread](https://docs.gspread.org/en/latest/)
+
+
+- Detecting the operating system and controlling the console is from [Geeks for Geeks](https://www.geeksforgeeks.org/python-os-uname-method/)
+
 
 ### Acknowledgments
 🚨**Required** 
 
-This is the section where you refer to code examples, mentors, blogs, stack overflow answers and videos that helped you accomplish your end project. Even if it's an idea that you updated you should note the site and why it was important to your completed project.
+- My Mentor Mrs. Malia Havlicek who helped me to code the best logic possible and guide me to detect my bugs. 
 
-If you used a CodeInstitute Instructional project as a starting point. Make note of that here too.
+- Code Institute [Full-Stack Development Course](https://codeinstitute.net/de/full-stack-software-development-diploma/)
+
+
 
