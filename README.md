@@ -41,44 +41,41 @@ https://github.com/AlAliMazen/who-wants-to-be-a-millionair/assets/153659892/3c86
 Mazen Al Ali
 
 ## Table of Contents
-🚀 **merit & beyond**
+- [Who Wants to be a Millionaire ?](#who-wants-to-be-a-millionaire--)
+  * [Flowchart of the Game:](#flowchart-of-the-game-)
+  * [Live Site](#live-site)
+  * [Repository](#repository)
+  * [Author](#author)
+  * [Table of Contents](#table-of-contents)
+    + [Screenshots and Videos](#screenshots-and-videos)
+- [Table of Contents](#table-of-contents-1)
+  * [How To Play/Use](#how-to-play-use)
+  * [Features](#features)
+    + [Implemented Features](#implemented-features)
+    + [Future Features](#future-features)
+  * [Flow Chart](#flow-chart)
+  * [Data Model/ Classes](#data-model--classes)
+    + [Player](#player)
+    + [Question](#question)
+  * [Data Module](#data-module)
+    + [utilities](#utilities)
+    + [game](#game)
+  * [Libraries used](#libraries-used)
+  * [Testing](#testing)
+    + [Validation Testing](#validation-testing)
+    + [Manual Testing](#manual-testing)
+    + [Defect Tracking](#defect-tracking)
+    + [Defects of Note](#defects-of-note)
+    + [Outstanding Defects](#outstanding-defects)
+    + [Commenting Code](#commenting-code)
+  * [Deployment](#deployment)
+    + [Prerequisites](#prerequisites)
+    + [Heroku](#heroku)
+  * [Credits](#credits)
+    + [Content](#content)
+    + [Acknowledgments](#acknowledgments)
 
-### Screenshots and Videos
-
-
-# Table of Contents
-🚀 **merit & beyond**
-
-- [PROJECT NAME](#project-name)
-  - [Live Site](#live-site)
-  - [Repository](#repository)
-  - [Author](#author)
-  - [Table of Contents](#table-of-contents)
-  - [How To Play/Use](#how-to-playuse)
-  - [Features](#features)
-    - [Implemented Features](#implemented-features)
-    - [Future Features](#future-features)
-  - [Flow Chart](#flow-chart)
-  - [Data Model/ Classes](#data-model-classes)
-    - [Class X](#class-x)
-  - [Libraries used](#libraries-used)
-  - [Testing](#testing)
-    - [Validation Testing](#validation-testing)
-    - [Manual Testing](#manual-testing)
-    - [Defect Tracking](#defect-tracking)
-    - [Defects of Note](#defects-of-note)
-    - [Outstanding Defects](#outstanding-defects)
-    - [Commenting Code](#commenting-code)
-  - [Deployment](#deployment)
-    - [Requirements](#requirements)
-    - [Gitpod](#gitpod)
-    - [Heroku](#heroku)
-  - [Credits](#credits)
-    - [Content](#content)
-    - [Media](#media)
-    - [Acknowledgments](#acknowledgments)
-    
-
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 ====================================== The Sections you Fill in are below ==============================
 
