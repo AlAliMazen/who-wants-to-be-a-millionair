@@ -119,7 +119,11 @@ Last but not least, the game makes use of the live score tracking. In other word
 ### Future Features
 🚀 **merit & beyond**
 
-The possibility for the player to remove two wrong options will be a good future feature to implement later on. This feature will be available be the medium and hard questions and only to be used once in the whole round.
+ - The possibility for the player to remove two wrong options will be a good future feature to implement later on. This feature will be available be the medium and hard questions and only to be used once in the whole round.
+
+ - Another very useful feature would be the possibility for the player to login using h/his email address and password. In other words, user can reopen his profile instead od typing his data again.
+
+ - The ability for player to quit the round and make a withdrawal at certain point when s/he can't get the right answer anymore ans wants to stop.
 
 
 ## Flow Chart
