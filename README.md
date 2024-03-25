@@ -510,6 +510,8 @@ I have used the following websites to get some code references and example:
 
 - Detecting the operating system and controlling the console is from [Geeks for Geeks](https://www.geeksforgeeks.org/python-os-uname-method/)
 
+- Static variables in python in [static vars in python how to create and access it](https://favtutor.com/blogs/static-variable-python#:~:text=A%20static%20variable%20is%20a,class%20but%20outside%20the%20methods.)
+
 
 ### Acknowledgments
 🚨**Required** 

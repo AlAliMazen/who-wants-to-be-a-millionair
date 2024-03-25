@@ -12,8 +12,6 @@ class Question:
         self.opt_d=question[4]
         self.r_index=question[5]
 
-    
-    
     def check_usr_answer(self, usr_answer):
         """
         chick user answer whether it is the same as the question real answer
@@ -21,7 +19,6 @@ class Question:
         print(f'The right answer is  : {self.r_index}')
         return True if self.r_index==usr_answer else False
     
-
     def get_question_txt(self):
         """
         get question text
@@ -29,12 +26,15 @@ class Question:
         return self.question
 
     def get_question_option(self, option):
-        if option==1:
+        """
+        returns the options of the initialized question
+        """
+        if option == 1:
             return self.opt_a
-        elif option==2:
+        elif option == 2:
             return self.opt_b
-        elif option==3:
+        elif option == 3:
             return self.opt_c
-        elif option==4:
+        elif option == 4:
             return self.opt_d
     
