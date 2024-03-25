@@ -285,37 +285,45 @@ Note any errors or warnings you are ignoring and why.
 ### Manual Testing
 🚨**Required** 
 
-Use Markdown to track how you tested each bit of user input for each valid option, various invalid entries and leading/trailing spaces
+When Game loads it looks like the following screenshot and the manuel testing is concerned with the input and choices made by the player
+
+![welcome screen](assets/README/Welcome_1.png)
+
 
 **Feature 1**
-- [ ] invalid entry, says sorry and re-prompts
-- [ ] no entry, says sorry and re-prompts
-- [ ] alpha when numeric expected, sorry and re-prompts
-- [ ] valid entry with leading spaces, trimmed and shows proper next stage
-- [ ] valid entry with trailing spaces, trimmed and shows proper next stage
+- "Invalid Choice: [user_input] is not a valid choice " when numeric input is expected. Player is asked again to put a valid input.
+ ![main menu choices](assets/README/invalid_main_menu_2.png)
 
-You should also call out how you tested any other features such as:
-- Welcome Message, recaps username
-- Score update shows current score
-- color change for correct vs incorrect
-- google sheet updated properly
 
-If you prefer spreadsheets, create a google-sheet and link to it in this section, just make sure you update the permissions to allow anyone to view it. You can make a [COPY of this example](https://docs.google.com/spreadsheets/d/1w_JUmFfzHVtXdHse6ib82BGnRMPlPqufSOnAVN3bVl8/edit?usp=sharing) and update it as your own. Just make sure you share it to anyone with the link:
-https://docs.google.com/spreadsheets/d/1w_JUmFfzHVtXdHse6ib82BGnRMPlPqufSOnAVN3bVl8/edit?usp=sharing
+- "Invalid input: [type full name or country]  can only have letters both in lower and uppercase and spaces NO numeric values!, please try again" 
+
+This message is going to be shown when player types special character by typing his full name or country.
+![invalid full name input](assets/README/invalid_input_2.png)
+
+
+
+- "Invalid Choice: 5 is not a valid choice " this message is shown when player is expected to choose a numeric choice from 1 to 4 . Here player types 5  which is not valid. Player is asked to enter a valid choice again.
+![invalid question choice](assets/README/Invalid_question_choice_3.png)
+
+
+Another manuel test is when testing the following functions separately by calling the functions from the run.py :
+ - print_game_title(): It will print the title and welcome message 
+ - print_game_menu(): prints the title of the game with the four options
+ - show_game_instructions(): prints game instruction
+ - print_question_with_choices(question, index): prints the question with its choices.
+
 
 ### Defect Tracking
 🚨**Required** 
 
-Try to create issues in real time as it better reflects the daily life of a developer.
-
-The easiest way to track defects is by using GITHUB's Issues to track these as it's really easy to copy/paste screenshots in and then write up how you closed them. At this stage you don't need a custom template or labels, that comes in P4.
+ **** What should I write here ***
 
  Here's a [guide to GitHub Defects](Defects.md)
 
 ### Defects of Note
 🚀 **merit & beyond**
 
-Some defects are more pesky than others. Highlight 3-5 of the bugs that drove you the most nuts and link to them directly here.
+ **** What should I write here ***
 
 
 ### Outstanding Defects
