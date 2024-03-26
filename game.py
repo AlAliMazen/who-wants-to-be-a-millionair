@@ -41,7 +41,6 @@ def start_game(player_obj):
         else:
             print("\n\nYour choice is wrong\n Game Over!\n")
             player_obj.update_safety_score()
-            utilities.update_scoring_sheet(player_obj.get_player_with_score(), index+1)  # noqa
             time.sleep(3)
             utilities.clear_console()
             utilities.print_player_info(player_obj.get_player_with_score(), index)  # noqa
@@ -63,12 +62,13 @@ def main():
                 player_obj = get_player_info()
                 start_game(player_obj)
                 play_again = utilities.play_again_mechanism(player_obj)
-                if play_again:
+                while play_again:
                     utilities.clear_console()
                     start_game(player_obj)
-                else:
-                    utilities.end_game_message()
-                    exit = True
+                    play_again = utilities.play_again_mechanism(player_obj)
+                
+                utilities.end_game_message()
+                exit = True
             elif int(game_choice) == 2:
                 utilities.show_game_instructions()
                 if utilities.get_user_choice() == "e":
