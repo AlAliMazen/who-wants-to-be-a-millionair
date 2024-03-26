@@ -39,7 +39,6 @@ https://github.com/AlAliMazen/who-wants-to-be-a-millionair/assets/153659892/3c86
 Mazen Al Ali
 
 ## Table of Contents
-
 - [Who Wants to be a Millionaire ?](#who-wants-to-be-a-millionaire--)
   * [Flowchart of the Game:](#flowchart-of-the-game-)
   * [Live Site](#live-site)
@@ -51,10 +50,11 @@ Mazen Al Ali
     + [Implemented Features](#implemented-features)
     + [Future Features](#future-features)
   * [Flow Chart](#flow-chart)
-  * [Data Model/ Classes](#data-model--classes)
+  * [Classes/ Data Model](#classes--data-model)
+    + [Classes](#classes)
     + [Player](#player)
     + [Question](#question)
-  * [Data Module](#data-module)
+  * [Data Modules](#data-modules)
     + [utilities](#utilities)
     + [game](#game)
   * [Libraries used](#libraries-used)
@@ -69,6 +69,7 @@ Mazen Al Ali
     + [Prerequisites](#prerequisites)
     + [Heroku](#heroku)
   * [Credits](#credits)
+    + [Repo on GitHub Template](#repo-on-github-template)
     + [Content](#content)
     + [Acknowledgments](#acknowledgments)
 
@@ -127,8 +128,10 @@ The following flow chart shows how the game starts and what happen by choosing o
 
 ![Flowchart](assets/README/who_wants_to_be_a_millionaire.png)
 
-## Data Model/ Classes
+## Classes/ Data Model
 
+
+### Classes
 
 ### Player
 
@@ -169,7 +172,7 @@ It is worth mentioning that all the previous properties are used in the construc
 - **get_question_txt(self)**: When the question class is called, an object of this class is initialized and it makes it easier to control it. This method returns the question text itself. 
 - **get_question_option(self, option)**: since the question is an object, this function will give a static index to this function and it returns the option of that question at this index. 
 
-## Data Module
+## Data Modules
 
 ### utilities
 This is the main python where the heavy load is executed. This file contains only functions and it is procedural; that is, it contains no class only objects of the previous two classes. Functions are as the following:
@@ -383,6 +386,7 @@ Scoring
     1. Log in to [Google console cloud](https://console.cloud.google.com/getting-started?pli=1)
         
         **GOOGLE DRIVE API Access**
+
         1. Create a new project in and make sure that the name has no spaces or special character 
 
         ![Google API Dashboard](assets/README/G_API_aa.png)
@@ -401,17 +405,21 @@ Scoring
           ![Keys_for_API](assets/README/G_API_IAM.png)
 
 
-        11. Click Add Key
-        ![Add JSON keys](assets/README/G_API_JSON_KEYS.png
-        )
+        11. Choose JSON type and click on **Create**
+
+        ![Add JSON keys](assets/README/G_API_JSON_KEYS.png)
+
         12. After choosing JSON as keys type, it will be possible to download this file. Click on the link to download the JSON keys.
         
         **GOOGLE SHEETS API Access**
-        You may need to us the back button get to the APIS & SErvices section from where you were.
+
+        You need to use the back button get to the APIS & SErvices section from where you were.
+
         1. click the Library  Tab and search for Google Sheets
         2. click enable (no need to go )
 
 3. The downloaded JSON file should then be added to the same directory where the project is cloned. As for me I use VS Code as IDE. I renamed this file as creds and it looks like the following:
+
   ![Creds](assets/README/CREDS.png)
 
 4. Share the "client_mail" with the pre-created Google-sheet as in the following screenshot
@@ -436,7 +444,7 @@ This section should describe the process for deploying the project on a live ser
 
 before heading to heroku, make sure to to run the following command in your IDE to freeze the packages in the requirements.tyt file. In other words, in your IDE and after making sure that everything is good run the following command in the terminal to list all the packages required for the deployment on Heroku.
 
-````
+```
 pip3 freeze > requirements.txt
 ````
 
@@ -482,12 +490,10 @@ After successfully setting up an account go to the dashboard by clicking on the 
 
   Clicking Yes and save will let the heroku look at the requirements file to start installing the required packages and deploy the app. When it is ready, it will show a link to open the App in both Heroku App page and on GitHub Project Repository.
 
-
-
 ## Credits
 
 
-
+### Repo on GitHub Template
 
 - [Code Institute Template](https://github.com/Code-Institute-Org/python-essentials-template) Used to set up the GitHub Repository and open it in the CodeAnyWhere IDE.
 
@@ -514,6 +520,8 @@ I have used the following websites to get some code references and example:
 - Detecting the operating system and controlling the console is from [Geeks for Geeks](https://www.geeksforgeeks.org/python-os-uname-method/)
 
 - Static variables in python in [static vars in python how to create and access it](https://favtutor.com/blogs/static-variable-python#:~:text=A%20static%20variable%20is%20a,class%20but%20outside%20the%20methods.)
+
+- Date in Python is from w3 schools [Python Datetime](https://www.w3schools.com/python/python_datetime.asp)
 
 
 ### Acknowledgments
