@@ -266,7 +266,6 @@ def print_question_with_choices(question, index):
     print("\n\n")
 
 
-
 def print_player_info(player, q_index):
     """
     Show the current player information at the top of the Game UI
