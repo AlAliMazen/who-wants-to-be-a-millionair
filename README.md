@@ -1,7 +1,5 @@
-
-
 # Who Wants to be a Millionaire ?
-🚨**Required** 
+
 "Who Want to be a Millionaire?" is a British television show first created by David Briggs, Steven Knight and Mike Whitehill for the ITV network in 1998. This application is just a clone of that concept. In simple words, a game in which the participant should answer 15 questions to get to the one million prize. 
 
 The game is divided into 3 sections of questions 5 questions for each level(Easy, Medium and Hard). The game will be terminated whenever a player chooses a wrong option for the shown question. 
@@ -26,29 +24,28 @@ https://github.com/AlAliMazen/who-wants-to-be-a-millionair/assets/153659892/3c86
 
 
 ## Live Site
-🚨**Required** 
+
 
 - [Who Wants to Be a Millionaire?](https://whowantstobeamillionaire24-bb20122b77fb.herokuapp.com/)
 
 ## Repository
-🚨**Required** 
+
 
 - A complete repository for the game is under [Who Wants to Be a Millionaire?](https://github.com/AlAliMazen/who-wants-to-be-a-millionair)
 
 ## Author
-🚨**Required** 
+
 
 Mazen Al Ali
 
 ## Table of Contents
+
 - [Who Wants to be a Millionaire ?](#who-wants-to-be-a-millionaire--)
   * [Flowchart of the Game:](#flowchart-of-the-game-)
   * [Live Site](#live-site)
   * [Repository](#repository)
   * [Author](#author)
   * [Table of Contents](#table-of-contents)
-    + [Screenshots and Videos](#screenshots-and-videos)
-- [Table of Contents](#table-of-contents-1)
   * [How To Play/Use](#how-to-play-use)
   * [Features](#features)
     + [Implemented Features](#implemented-features)
@@ -81,7 +78,7 @@ Mazen Al Ali
 
 
 ## How To Play/Use
-🚨**Required** 
+
 
 When the Game starts it does execute the following steps before the player is able to type an choice. First of all it reads the questions text files and split them into lists preparing them for inserting in the Google drive sheets. Only if the google sheets allocated for the questions are empty, the population process will be executed. Each question sheet has 20 question. There are 3 types of questions (Easy, Medium and Hard)
 
@@ -98,11 +95,11 @@ How to play when game starts?
     9- If player chooses to quit the game, s/he should only choose number 4 and game will be terminated.
 
 ## Features
-🚨**Required** 
+
 
 
 ### Implemented Features
-🚨**Required** 
+
 
 From a developer point of view this version of the game implements the concept of the OOP and makes use of the class concept. Player as well as Question both have their separated files and initialized in another procedural python file.
 
@@ -114,7 +111,7 @@ Last but not least, the game makes use of the live score tracking. In other word
 
 
 ### Future Features
-🚀 **merit & beyond**
+
 
  - The possibility for the player to remove two wrong options will be a good future feature to implement later on. This feature will be available be the medium and hard questions and only to be used once in the whole round.
 
@@ -124,14 +121,14 @@ Last but not least, the game makes use of the live score tracking. In other word
 
 
 ## Flow Chart
-🚀 **merit & beyond**
+
 
 The following flow chart shows how the game starts and what happen by choosing options 
 
-![game Flow Chart](assets/README/who_wants_to_be_a_millionaire.png)
+![Flowchart](assets/README/who_wants_to_be_a_millionaire.png)
 
 ## Data Model/ Classes
-🚨**Required** 
+
 
 ### Player
 
@@ -228,7 +225,7 @@ this module contains the main function which is used to wait for user input. Whe
 
 
 ## Libraries used
-🚀 **merit & beyond**
+
 
 | Library                    | Usage                                                                                                                                                                                                                                                                                           |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -255,32 +252,44 @@ this module contains the main function which is used to wait for user input. Whe
 | urllib3 2.2.1              | urllib3 is a powerful, user-friendly HTTP client for Python. Much of the Python ecosystem already uses urllib3 and you should too.                                                                                                                                                              |
 
 ## Testing
-🚨**Required** 
+
 
 This section will shed light on validation of my code according the standards of python and some strategies which help to maintain readability.
 
 
 ### Validation Testing
-🚨**Required** 
 
-You should try to ensure you code is valid and follows proper indentation.  In this section you should write up any websites you used to validate your code. As your projects becomes more complex these tools may change.
 
-For each python file in your project, paste it into [CI's pep8 tool](https://pep8ci.herokuapp.com/), and take a screenshot of the linter output showing NO ERRORS
+For every python file I have use the [CI's pep8 tool](https://pep8ci.herokuapp.com/) website to ensure that the code shown here is a valid python code.
+ 
+**Note** 
 
-![image](https://user-images.githubusercontent.com/23039742/212106175-36b2f18a-7c75-458d-94dd-9886e81c71f3.png)
+On some lines I have used
+````
+  # noqa
+````
+just to avoid the long indication on the website.
 
-Ideally you would have no errors remaining outside of line too long which you can fix by 
+**game.py**
 
-adding
-```$python 
-# noqa
-```
-There is a space before the # and after it to skip the quality assurance for that line.
+![the game python file](assets/README/game_py.png)
 
-Note any errors or warnings you are ignoring and why.
+
+**question Class**
+
+![question class](assets/README/question_python_file.png)
+
+**player Class**
+
+![player class](assets/README/player_py.png)
+
+**utilities**
+
+![utilities python](assets/README/utilities_py.png)
+
 
 ### Manual Testing
-🚨**Required** 
+
 
 When Game loads it looks like the following screenshot and the manuel testing is concerned with the input and choices made by the player
 
@@ -311,36 +320,33 @@ Another manuel test is when testing the following functions separately by callin
 
 
 ### Defect Tracking
-🚨**Required** 
 
- **** What should I write here ***
 
- Here's a [guide to GitHub Defects](Defects.md)
+ It took me long time to figure out the use and implementation of the Regular Expressions. The pattern how it works and how it works took me nearly two days. As a site of good reference about the usage of Regular Expression is found on [Regular Expression operations](https://docs.python.org/3/library/re.html)
 
 ### Defects of Note
-🚀 **merit & beyond**
 
- **** What should I write here ***
 
+ As a matter of fact, the console on the Heroku platform can't be really controlled and player can scroll back and forward which can sometimes distract player.
 
 ### Outstanding Defects
-🚨**Required** 
 
-I don't know if the following issus is considered as a failure. It is only present on the deployed version. Since the console is not completely cleared, then player can scroll up and see the past questions and options.
+
+I don't know if the following issue is considered as a failure. It is only present on the deployed version. Since the console is not completely cleared, then player can scroll up and see the past questions and options.
 
 
 ### Commenting Code
-🚀 **merit & beyond**
+
 
 Every function in the code whether it is inside a class or a module is commented as descriptive as possible. The main purpose of the comment is to indicate the purpose why the function is written and what it does. 
 
 It is worth mentioning that all the functions are also explained here in the README file.
 
 ## Deployment
-🚨**Required** 
+
 
 ### Prerequisites
-🚨**Required** 
+
 
 
 1. **Google Account:** In order to have this program work, you need a google account. If you don't have one  [Create a google account](https://accounts.google.com/Signup)
@@ -422,7 +428,7 @@ It is important to run the following command in order to install the dependencie
 
 
 ### Heroku
-🚨**Required** 
+
 
 This section should describe the process for deploying the project on a live server for backend applications. Heroku is free for only 5 applications and it needs a credit card for setting up an account. I also followed the steps shown through the course. 
 
@@ -479,14 +485,14 @@ After successfully setting up an account go to the dashboard by clicking on the 
 
 
 ## Credits
-🚨**Required** 
+
 
 
 
 - [Code Institute Template](https://github.com/Code-Institute-Org/python-essentials-template) Used to set up the GitHub Repository and open it in the CodeAnyWhere IDE.
 
 ### Content
-🚨**Required** 
+
 
 I have used the following websites to get some code references and example:
 
@@ -511,7 +517,7 @@ I have used the following websites to get some code references and example:
 
 
 ### Acknowledgments
-🚨**Required** 
+
 
 - My Mentor Mrs. Malia Havlicek who helped me to code the best logic possible and guide me to detect my bugs. 
 
