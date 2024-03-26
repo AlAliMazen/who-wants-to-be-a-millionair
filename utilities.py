@@ -319,14 +319,15 @@ def get_scoring_board():
     """
     scoring_sheet = SHEET.worksheet('scoring').get_all_values()
     scoring_sheet = scoring_sheet[1:]
-    sorted_data = sorted(scoring_sheet, key=lambda x: x[2], reverse=True)
+    scores_as_integers = [[sublist[0], sublist[1], int(sublist[2]), sublist[3], sublist[4]] for sublist in scoring_sheet]  # noqa
+    sorted_data = sorted(scores_as_integers, key=lambda x: x[2], reverse=True)
     gap = 10
     clear_console()
     print_game_title()
     print("".rjust(gap//2)+"Full name".ljust(gap*2)+"Country".ljust(gap)+"Score".ljust(gap)+"Level".ljust(gap)+"Date".ljust(gap)+"\n")  # noqa
 
     for row in sorted_data:
-        print("".rjust(gap//2)+row[0].ljust(gap*2)+row[1].ljust(gap)+row[2].ljust(gap)+row[3].ljust(gap)+row[4].ljust(4))  # noqa
+        print("".rjust(gap//2)+row[0].ljust(gap*2)+row[1].ljust(gap)+str(row[2]).ljust(gap)+row[3].ljust(gap)+row[4].ljust(4))  # noqa
 
     print("\n\n\n")
 

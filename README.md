@@ -360,7 +360,7 @@ following screenshots are the structure of the pre-mentioned working sheets:
 
 Player:
 
-![player](assets/README/player_ws.png)
+![player](assets/README/player_gs.png)
 
 Easy Questions:
 
