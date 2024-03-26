@@ -287,7 +287,7 @@ def update_scoring_sheet(player, index):
         level = 'Hard'
     elif index > 5:
         level = 'Medium'
-    now = datetime.datetime.now().strftime("%d.%m.%Y %X")
+    now = datetime.datetime.now().strftime("%d.%m.%Y")
     scoring = []
     for ind in player:
         scoring.append(ind)
