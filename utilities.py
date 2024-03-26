@@ -259,13 +259,12 @@ def print_question_with_choices(question, index):
     print the question in certain style inside the question
     """
     padding = 10
-    option_padding = padding*2
     print(f' '.ljust(padding)+str(index+1)+" "+question.get_question_txt().ljust(padding)+'')  # noqa
-    print(f''.ljust(1)+"".center(len(str(index+1)+question.get_question_txt())+option_padding, "-")+'')  # noqa
-    print(f''.ljust(option_padding)+'1 ) '+question.get_question_option(1).ljust(option_padding))  # noqa
-    print(f''.ljust(option_padding)+'2 ) '+question.get_question_option(2).ljust(option_padding))  # noqa
-    print(f''.ljust(option_padding)+'3 ) '+question.get_question_option(3).ljust(option_padding))  # noqa
-    print(f''.ljust(option_padding)+'4 ) '+question.get_question_option(4).ljust(option_padding)+'\n')  # noqa
+    print(f''.ljust(1)+"".center(len(str(index+1)+question.get_question_txt())+padding*2, "-")+'')  # noqa
+    print(f''.ljust(padding//2)+'1 ) '+question.get_question_option(1).ljust(padding*2)+' 3 ) '+question.get_question_option(3))  # noqa
+    print(f''.ljust(padding//2)+'2 ) '+question.get_question_option(2).ljust(padding*2)+' 4 ) '+question.get_question_option(4))  # noqa
+    print("\n\n")
+
 
 
 def print_player_info(player, q_index):
